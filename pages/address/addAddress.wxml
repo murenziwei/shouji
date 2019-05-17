@@ -1,0 +1,52 @@
+<view class="container">
+
+    <view class='item'>
+      <view>收货人</view>
+      <input placeholder='请输入收货人姓名'></input>
+    </view>
+    <view class='item'>
+      <view>电话号码</view>
+      <input placeholder='请输入收货人手机号'></input>
+    </view>
+    
+    <picker mode = "region" bindchange="bindRegionChange"  value="{{region}}" >
+        <view class='item'>
+          <view>街道地址</view>
+          <input placeholder='请选择地址' value='{{place}}'></input>
+        </view>
+    </picker>
+    <view class='item'>
+      <view>详细地址</view>
+      <input placeholder='请输入详细地址' value='{{place}}'></input>
+    </view>
+
+  <!-- <view class="diyg">
+    <view class="baise">
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput="name" value="{{name}}" placeholder="收货人姓名" />
+      </view>
+    </view>
+  </view>
+  <view class="">
+    <view class="baise">
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput='phone' value="{{phone}}" placeholder="电话号码 " />
+      </view>
+    </view>
+  </view>
+  <view class="nihao">
+    <view style="height:auto;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" class="picker" bindtap='dianji'>
+      {{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </view>
+  <view class="biank1">
+    <view class="shijiu">
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" bindinput='xiangx' value="{{xiangxi}}" placeholder="街道地址" style="height: 5.3em" />
+      </view>
+    </view>
+  </view> -->
+  <view class="btn">
+    <button class="weui-btn" type="warn" bindtap='baochun'>保存</button>
+  </view>
+</view>

@@ -1,0 +1,200 @@
+@import "/utils/weui.wxss";
+.page {
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+  background-color: #f7f9fc;
+}
+
+.dizhi {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #e2e2e2;
+  display: flex;
+  background-color: #fff;
+  border-bottom: 8px solid #f7f9fc;
+}
+
+.zuishao {
+  width: 15%;
+  height: 100%;
+  text-align: center;
+}
+
+.zuida {
+  width: 70%;
+  height: 100%;
+}
+.tianjiaz{
+  text-align: center;
+  line-height: 170rpx;
+  font-size:30rpx;
+}
+
+.zuihou {
+  width: 15%;
+  height: 100%;
+  position: relative;
+}
+
+.name {
+  width: 100%;
+  height: auto;
+  font-size: 17px;
+  color: #696969;
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
+}
+
+.ziti {
+  font-size: 17px;
+  color: #696969;
+  line-height: 44rpx;
+}
+
+.jiantou {
+  width: 20px;
+  height: 20px;
+  font-size: 30rpx;
+  color:#bebebe;
+  position: absolute;
+  top: 33px;
+  right: 15px;
+}
+
+.zuiwam {
+  height: auto;
+  width: 100%;
+}
+
+.yige {
+  width: 100%;
+  /* height: 110px; */
+  /* border-bottom: 1px solid #e2e2e2; */
+  background-color: #fff;
+  display: flex;
+}
+.weui-cell__ft{
+  color:#ff242a;
+}
+.tupian {
+  /* width: 20%; */
+  height: auot;
+  padding: 3%;
+  margin:auto;
+}
+
+.daxiao {
+  width: 80px;
+  height: 80px;
+}
+
+.guohou {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #e2e2e2;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.huali {
+  /* width: 75%; */
+  height: auot;
+  padding: 3%;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+}
+.mingc{
+  font-size:14px;
+  color:#353535;
+  line-height: 38rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}
+.pingp{
+  color:#a3a3a3;
+  font-size:14px;
+  line-height: 38rpx;
+}
+.red{
+  color:#ff242a;
+  font-size:28rpx;
+  line-height: 55rpx;
+  display: flex;
+  justify-content:space-between;
+}
+.stepper {  
+    width: 103px;  
+    height: 30px;  
+    /*给主容器设一个边框*/  
+    border: 1px solid #ccc;  
+    border-radius: 3px;  
+}
+
+  
+/*加号和减号*/  
+.stepper text {  
+    width: 30px;  
+    line-height: 30px;  
+    text-align: center;  
+    float: left;  
+    font-size:30rpx;
+}  
+  
+/*数值*/  
+.stepper input {  
+    width: 40px;  
+    height: 30px;  
+    float: left;  
+    margin: 0 auto;  
+    text-align: center;  
+    font-size: 12px;  
+    /*给中间的input设置左右边框即可*/  
+    border-left: 1px solid #ccc;  
+    border-right: 1px solid #ccc;  
+}  
+  
+/*普通样式*/  
+.stepper .normal{  
+    color: black;  
+}  
+  
+/*禁用样式*/  
+.stepper .disabled{  
+    color: #ccc;  
+}  
+.tijiao{
+  width:100%;
+  height:60px;
+  position: fixed;
+  bottom:0px;
+  right:0px;
+  display: flex;
+}
+.shifu{
+  width:60%;
+  height:100%;
+  font-size:34rpx;
+  text-align: right;
+  line-height: 58px;
+  border-top:1px solid #e2e2e2;
+  background-color:#fff;
+}
+.jinge{
+  width:40%;
+  height:100%;
+  background-color:#1296db;
+  font-size:18px;
+  color:#fff;
+  text-align: center;
+  line-height: 58px;
+}
+.weui-cells{
+  position: relative;
+}

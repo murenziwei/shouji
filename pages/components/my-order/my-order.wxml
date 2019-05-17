@@ -1,0 +1,251 @@
+<view class="container">
+  <view style="" class='nav'>
+    <block wx:for="{{tabs}}" wx:key="*this" >
+      <view id="{{index}}" class="weui-navbar__item_lw {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+  </view>
+  <view class='content'>
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <block wx:if="{{spshuliang.length == 0}}">
+            <view class="quanm">
+              <image src="/images/icon/meiyou.png" class="zanwu"></image>
+            </view>
+          </block>
+          <block>
+            <view class="zzwaim" wx:for="{{spshuliang}}" wx:for-item="item">
+              <view class="bianhao">
+                <view>订单编号：\t{{item.order_code}}</view>
+                <view class="tupw" data-id="{{item.order_code}}" bindtap='shanchu'>
+                  <image src="../../../img/laji.png" style="width:20px;height:20px;"></image>
+                </view>
+              </view>
+              <view class="xian">
+                <view class="zuiwam" wx:for="{{item.goods_info}}" wx:for-item="options" data-id="{{options.goods_id}}">
+                  <view class="yige">
+                    <view class="tupian">
+                      <view class="guohou">
+                        <image src="{{options.goods_thumb}}" class="daxiao"></image>
+                      </view>
+                    </view>
+                    <view class="huali">
+                      <view class="mingc">{{options.goods_name}}</view>
+                      <view class="pingp">{{options.format_name}}</view>
+                      <view class="shuliang">x\t{{options.buy_numble}}</view>
+                    </view>
+                    <view class="erjiu">￥{{options.goods_price}}</view>
+                  </view>
+                </view>
+                <view class="zongji">
+                  <text>　{{item.add_time}}</text>
+                  <view> 实付:\t
+                    <text style="color:#ff373c">￥{{item.cash_pay}}　　</text>
+                  </view>
+                </view>
+              </view>
+              <view class="daifuk">
+                <view style="width:60%;height:100%">
+                  <text class="fuk">待付款</text>
+                </view>
+                <view style="width:50%;height:100%;display:flex;margin-top:2%;">
+                  <view class="ckxq" data-id="{{item.order_code}}" data-gold_pay="{{item.gold_pay}}"  data-express_total= "{{item.express_total}}" data-type="1" bindtap='xiangq'>查看详情</view>
+                  <view class="ckxq ljzf" bindtap='ljzhifu' data-id="{{item.order_code}}">立即支付</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <block wx:if="{{spshuliang2.length == 0}}">
+            <view class="quanm">
+              <image src="/images/icon/meiyou.png" class="zanwu"></image>
+            </view>
+          </block>
+          <block>
+            <view class="zzwaim" wx:for="{{spshuliang2}}" wx:for-item="item">
+              <view class="bianhao">
+                订单编号：\t{{item.order_code}}
+
+              </view>
+              <view class="xian">
+                <view class="zuiwam" wx:for="{{item.goods_info}}" wx:for-item="options" data-id="{{options.goods_id}}">
+                  <view class="yige">
+                    <view class="tupian">
+                      <view class="guohou">
+                        <image src="{{options.goods_thumb}}" class="daxiao"></image>
+                      </view>
+                    </view>
+                    <view class="huali">
+                      <view class="mingc">{{options.goods_name}}</view>
+                      <view class="pingp">{{options.format_name}}</view>
+                      <view class="shuliang">x\t{{options.buy_numble}}</view>
+                    </view>
+                    <view class="erjiu">￥{{options.goods_price}}</view>
+                  </view>
+                </view>
+                <view class="zongji">
+                  <text>　{{item.add_time}}</text>
+                  <view> 实付:\t
+                    <text style="color:#ff373c">￥{{item.cash_pay}}　　</text>
+                  </view>
+                </view>
+              </view>
+              <view class="daifuk">
+                <view style="width:60%;height:100%">
+                  <text class="fuk">待发货</text>
+                </view>
+                <view style="width:85%;height:100%;display:flex;margin-top:2%;">
+                  <view class="ckxq baise"></view>
+                  <view class="ckxq" bindtap='tuikuan' data-id="{{item.order_code}}" wx:if="{{item.tui_status == 0}}">申请退款</view>
+                  <view class="ckxq" wx:if="{{item.tui_status == 1}}">退款中</view>
+                  <view class="ckxq" wx:if="{{item.tui_status == 3}}" bindtap='xiangq' data-type="2" data-id="{{item.order_code}}" data-gold_pay="{{item.gold_pay}}"  data-express_total= "{{item.express_total}}">已拒绝退款</view>
+                  <view class="ckxq" bindtap='xiangq' data-type="2" data-id="{{item.order_code}}" data-gold_pay="{{item.gold_pay}}"  data-express_total= "{{item.express_total}}">查看详情</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+          <block wx:if="{{spshuliang3.length == 0}}">
+            <view class="quanm">
+              <image src="/images/icon/meiyou.png" class="zanwu"></image>
+            </view>
+          </block>
+          <block>
+            <view class="zzwaim" wx:for="{{spshuliang3}}" wx:for-item="item">
+              <view class="bianhao">订单编号：\t{{item.order_code}}</view>
+              <view class="xian">
+                <view class="zuiwam" wx:for="{{item.goods_info}}" wx:for-item="options" data-id="{{options.goods_id}}">
+                  <view class="yige">
+                    <view class="tupian">
+                      <view class="guohou">
+                        <image src="{{options.goods_thumb}}" class="daxiao"></image>
+                      </view>
+                    </view>
+                    <view class="huali">
+                      <view class="mingc">{{options.goods_name}}</view>
+                      <view class="pingp">{{options.format_name}}</view>
+                      <view class="shuliang">x\t{{options.buy_numble}}</view>
+                    </view>
+                    <view class="erjiu">￥{{options.goods_price}}</view>
+                  </view>
+                </view>
+                <view class="zongji">
+                  <text>　{{item.add_time}}</text>
+                  <view> 实付:\t
+                    <text style="color:#ff373c">￥{{item.cash_pay}}　　</text>
+                  </view>
+                </view>
+              </view>
+              <view class="daifuk">
+                <view style="width:60%;height:100%">
+                  <text class="fuk">待收货</text>
+                  <!-- <text class="daojis">支付倒计时：29分22秒</text> -->
+                </view>
+                <view style="width:85%;height:100%;display:flex;margin-top:2%;">
+                <view class="ckxq" wx:if="{{item.tui_status == 3}}" bindtap='xiangq' data-type="3" data-id="{{item.order_code}}" data-gold_pay="{{item.gold_pay}}"  data-express_total= "{{item.express_total}}">已拒绝退款</view>
+                  <view class="ckxq" bindtap='xiangq' data-type="3" data-id="{{item.order_code}}" data-gold_pay="{{item.gold_pay}}"  data-express_total= "{{item.express_total}}">查看详情</view>
+                  <view class="ckxq ljzf" bindtap='qush' data-id="{{item.order_code}}">确认收货</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 4}}">
+          <block wx:if="{{spshuliang4.length == 0}}">
+            <view class="quanm">
+              <image src="/images/icon/meiyou.png" class="zanwu"></image>
+            </view>
+          </block>
+          <block>
+            <view class="zzwaim" wx:for="{{spshuliang4}}" wx:for-item="item">
+              <view class="bianhao">订单编号：\t{{item.order_code}}</view>
+              <view class="xian">
+                <view class="zuiwam" wx:for="{{item.goods_info}}" wx:for-item="options" data-id="{{options.goods_id}}">
+                  <view class="yige">
+                    <view class="tupian">
+                      <view class="guohou">
+                        <image src="{{options.goods_thumb}}" class="daxiao"></image>
+                      </view>
+                    </view>
+                    <view class="huali">
+                      <view class="mingc">{{options.goods_name}}</view>
+                      <view class="pingp">{{options.format_name}}</view>
+                      <view class="shuliang">x\t{{options.buy_numble}}</view>
+                    </view>
+                    <view class="erjiu">￥{{options.goods_price}}</view>
+                  </view>
+                </view>
+                <view class="zongji">
+                  <text>　{{item.add_time}}</text>
+                  <view> 实付:\t
+                    <text style="color:#ff373c">￥{{item.cash_pay}}　　</text>
+                  </view>
+                </view>
+              </view>
+              <view class="daifuk">
+                <view style="width:60%;height:100%">
+                  <text class="fuk">待完成</text>
+                </view>
+                <view style="width:50%;height:100%;display:flex;margin-top:2%;">
+                <view class="ckxq" wx:if="{{item.tui_status == 3}}" bindtap='xiangq' data-type="4" data-id="{{item.order_code}}" data-gold_pay="{{item.gold_pay}}"  data-express_total= "{{item.express_total}}">已拒绝退款</view>
+                  <view class="ckxq" bindtap='xiangq' data-type="4" data-id="{{item.order_code}}" data-gold_pay="{{item.gold_pay}}"  data-express_total= "{{item.express_total}}">查看详情</view>
+                  <view class="ckxq ljzf" bindtap='queren' data-id="{{item.order_code}}">确认</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+          <block wx:if="{{spshuliang6.length == 0}}">
+            <view class="quanm">
+              <image src="/images/icon/meiyou.png" class="zanwu"></image>
+            </view>
+          </block>
+          <block >
+            <view class="zzwaim" wx:for="{{spshuliang6}}" wx:for-item="item">
+              <view class="bianhao">订单编号：\t{{item.order_code}}</view>
+              <view class="xian">
+                <view class="zuiwam" wx:for="{{item.goods_info}}" wx:for-item="options" data-id="{{options.goods_id}}">
+                  <view class="yige">
+                    <view class="tupian">
+                      <view class="guohou">
+                        <image src="{{options.goods_thumb}}" class="daxiao" ></image>
+                      </view>
+                    </view>
+                    <view class="huali">
+                      <view class="mingc">{{options.goods_name}}</view>
+                      <view class="pingp">{{options.format_name}}</view>
+                      <view class="shuliang">x\t{{options.buy_numble}}</view>
+                    </view>
+                    <view class="erjiu">
+                      <view>￥{{options.goods_price}}</view>
+                      <!-- <view class="ckxq1" bindtap='pinglun' data-id="{{item.id}}"data-sq="{{options.goods_id}}">评论</view> -->
+                    </view>
+                  </view>
+                </view>
+                <view class="zongji">
+                  <text>　{{item.add_time}}</text>
+                  <view> 实付:\t
+                    <text style="color:#ff373c">￥{{item.cash_pay}}　　</text>
+
+                  </view>
+                </view>
+              </view>
+              <view class="daifuk">
+                <view style="width:60%;height:100%">
+                  <text class="fuk">已完成</text>
+                </view>
+                <view style="width:85%;height:100%;display:flex;margin-top:2%;">
+                  <view class="ckxq baise"></view>
+                  <view class="ckxq" wx:if="{{item.tui_status == 2}}">已退款</view>
+                  <view class="ckxq" wx:if="{{item.tui_status == 3}}" bindtap='xiangq' data-type="6" data-id="{{item.order_code}}" data-gold_pay="{{item.gold_pay}}"  data-express_total= "{{item.express_total}}">已拒绝退款</view>
+                  <view class="ckxq" bindtap='xiangq' data-type="6" data-id="{{item.order_code}}" data-gold_pay="{{item.gold_pay}}"  data-express_total= "{{item.express_total}}">查看详情</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+  </view>
+</view>

@@ -1,0 +1,62 @@
+<!--pages/myshop/index.wxml-->
+<view class='container'>
+  <view class='top'>
+    
+    <view>可提现佣金</view>
+    <view style='padding-bottom:40rpx;'>{{p_userCoin}}</view>
+    <view class='bt' bindtap='tixian'>提现</view>
+  </view>
+  <view class='asd' style='display:flex;padding:40rpx;justify-content: space-between;'>
+    <view>
+      <view>已提现佣金</view>
+      <view style='color:#ffc105;'>{{pay_past}}元</view>
+    </view>
+    <view style='border-left:1rpx solid #ddd;'>
+      <view>未提现佣金</view>
+      <view style='color:#ffc105;'>{{pay_wait}}元</view>
+    </view>
+  </view>
+  <view class='six'>
+    <view class='six-item'>
+      <image src='/images/icon/zongyongjin.png'></image>
+      <view>总佣金</view>
+      <view style='color:#fd7d78'>{{total_numble}}元</view>
+    </view>
+    <view class='six-item'>
+      <image src='/images/icon/zongdingdan.png'></image>
+      <view>订单</view>
+      <view style='color:#fd7d78'>总订单数：{{orderNum}}</view>
+    </view>
+    <view bindtap='toTeam' class='six-item'>
+      <image src='/images/icon/zongrenshu.png'></image>
+      <view>我的团队</view>
+      <view style='color:#fd7d78'>总人数：{{peopleNum}}人</view>
+    </view>
+    <view class='six-item' bindtap='erweima'>
+      <image src='/images/icon/tuiguang.png'></image>
+      <view>推广二维码</view>
+    </view>
+    <!-- <view class='six-item'>
+      <image src='/images/icon/xianxia.png'></image>
+      <view>线下店长</view>
+    </view>
+    <view class='six-item'>
+      <image src='/images/icon/qudao.png'></image>
+      <view>渠道收益</view>
+    </view> -->
+  </view>
+</view>
+
+<block wx:if="{{xiaoshi == 1}}">
+<view class="zhedang" bindtap='xiaos'>
+
+<view class='cancel-f'>
+   <icon color="#ffffff" type='cancel' catchtap='xiaos' size='40'></icon>
+</view>
+</view>
+<view class="zhongjian" animation="{{animation}}">
+  <!-- <image src="https://murenziwei.github.io/video/saoma.png" mode='scaleToFill' style='height:100%;'  data-url='https://murenziwei.github.io/video/saoma.png' bindtap='baochun' class='image'></image> -->
+  <image src="{{erweim}}" class="zhongj" data-url='{{erweim}}' bindtap='baochun'></image>
+</view>
+</block>
+<shareAndKefu />

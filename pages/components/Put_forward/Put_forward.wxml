@@ -1,0 +1,64 @@
+<view class="page">
+  <view class="weui-cells weui-cells_after-title nih">
+    <view class="weui-cell pdd">
+      <view class="weui-cell__bd ziti">账户剩余金额：{{total_numble}}元</view>
+    </view>
+    <view class="weui-cell weui-cell_input pdd1">
+      <view class="weui-cell__hd">
+        <view class="weui-label lable">￥</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput='tixian' value="{{jinge}}" placeholder="输入提现金额" />
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title">提现金额不能小于{{limit_money}}元</view>
+  <view class="fangshi">
+    <view class="tixianfs">提现方式</view>
+    <view style="display:flex;">
+      <view class="yhk {{yhk == 0?'weixin':''}}" bindtap='gaib1' data-id="1">
+        <icon class="iconfont icon-weixin" style="font-size:40rpx;color:#3baf34;line-height:95rpx;margin-left:17rpx;margin-right:15rpx"></icon>
+        <view style="font-size:30rpx;line-height:88rpx">微信</view>
+      </view>
+      <view class="yhk {{yhk == 1?'weixin':''}}" bindtap='gaib' data-id="2">
+        <icon class="iconfont icon-zhifubao" style="font-size:40rpx;color:#4795f4;line-height:95rpx;margin-left:17rpx;margin-right:15rpx"></icon>
+        <view style="font-size:30rpx;line-height:88rpx">支付宝</view>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{yhk == 0}}">
+    <view class="weui-cells weui-cells_after-title shangm">
+      <view class="weui-cell weui-cell_input pdd1">
+        <view class="weui-cell__hd">
+          <view class="weui-label lable1">
+            <text>账号</text>
+            <text style="color:red;">*</text>
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" value="{{wechat_code}}" placeholder="请输入正确微信账号" bindinput='wechat' />
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{yhk == 1}}">
+    <view class="weui-cells weui-cells_after-title shangm">
+      <view class="weui-cell weui-cell_input pdd1">
+        <view class="weui-cell__hd">
+          <view class="weui-label lable1">
+            <text>账号</text>
+            <text style="color:red;">*</text>
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" bindinput='bacnag' value="{{userInputCardNo}}" placeholder="请输入正确支付宝账号" />
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="page__bd page__bd_spacing abg">
+    <button class="weui-btn s-b" type="warn" bindtap='tijiao'>提交申请</button>
+    
+    <navigator class='nav-history' hover-class='none' url='/pages/components/historymoney/historymoney'>查看提现记录</navigator>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "shareAndKefu": "/components/shareAndKefu/index"
+  },
+  "navigationBarTitleText": "商务合作"
+}

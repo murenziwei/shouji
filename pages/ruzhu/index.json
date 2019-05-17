@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "店主入驻",
+  "usingComponents": {
+    "shareAndKefu": "/components/shareAndKefu/index"
+  }
+}

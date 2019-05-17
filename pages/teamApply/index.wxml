@@ -1,0 +1,39 @@
+<!--pages/teamApply/index.wxml-->
+<view class='container' hidden="{{isback==1}}">
+  <view class='content'>
+    <form bindsubmit="formSubmit" report-submit='{{true}}'>
+    <view class='title'>
+      <i class='iconfont icon-gerendianpu'></i>
+      请填写个人信息
+    </view>
+    
+    <view class='item'>
+      <view class='label'>昵称</view>
+      <input placeholder='请输入您的昵称' name='nickname' value='{{nickname}}'></input>
+    </view>
+    <view class='item'>
+      <view class='label'>手机号</view>
+      <input type='number' placeholder='请输入您的手机号' name='mobile' value='{{mobile}}'></input>
+    </view>
+    <view class='item'>
+      <view class='label'>职业</view>
+      <input placeholder='请输入您的职业' name='work' value='{{work}}'></input>
+    </view>
+    <view class='item' style='border-bottom:1rpx solid #eee'>
+      <view class='label'>所在城市</view>
+      <input placeholder='请选择所在城市' name='city' value='{{city}}'></input>
+    </view>
+    <view class='item' style='border-bottom:1rpx solid #eee'>
+      <view class='label'>店铺名称</view>
+      <input placeholder='请选择店铺名称' name='shop_name' value='{{shop_name}}'></input>
+    </view>
+    <view class='p' style='font-size:24rpx;color:#999;padding-top:30rpx;'>
+      提示：
+      <view>成为团队店长需支付3000.00元的合作资金</view>
+    </view>
+    <button type='warn' class='s-b' form-type='submit'>确认申请</button>
+    </form>
+  </view>
+</view>
+
+<shareAndKefu bind:myevent="myevent" shareVal="{{false}}"></shareAndKefu>

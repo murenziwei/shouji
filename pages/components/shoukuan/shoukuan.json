@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "渠道收益",
+  "usingComponents": {
+    "shareAndKefu": "/components/shareAndKefu/index"
+  }
+}

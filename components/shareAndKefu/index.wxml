@@ -1,0 +1,60 @@
+<!--components/shareAndKefu/index.wxml-->
+<view class='rightBotttom'>
+  
+  <navigator open-type='reLaunch' url='/pages/index/index' class='home-icon' hover-class='none'  wx:if='{{homeVal}}'>
+    <view>
+      <image src='/images/icon/home-icon.png'></image>
+      <view class='kefu-text'>首页</view>  
+    </view>
+  </navigator>
+  <button open-type="contact" class="kefu">
+    <view>
+      <image src='/images/icon/kefu-3.png'></image>
+      <view class='kefu-text'>在线客服</view>  
+    </view>
+  </button>
+  <view class='kefu' bindtap='showShare' wx:if='{{shareVal}}'>
+    <image src='/images/icon/fenxiang.png'></image>
+    <view class='kefu-text'>分享有礼</view> 
+  </view>
+  <view wx:if="{{showCover}}" class='coverC'>
+    <view class='topC'  data-a="123">
+      
+      <view bindtap='clicks' class='not'>
+          <icon type='cancel' catchtap='clicks' color='#ffffff' size='30' style='margin-top:12rpx;'></icon>
+      </view>
+      <!-- <image class='image' mode='' src='/images/test/saoma.png'></image> -->
+      <swiper bindchange='onChange' circular="true" indicator-dots="{{true}}" autoplay="{{false}}" interval="{{5000}}" duration="{{1000}}" previous-margin="120rpx" next-margin="120rpx" indicator-active-color="#ff3e21" class="swiper yuanjiao" >
+          <swiper-item wx:for="{{img}}" wx:key="index" wx:for-index="index">
+            <view style='position:relative;height:900rpx;'>
+            
+              <image  src="{{item.banner_image}}" data-src="{{item.banner_image}}" bindtap="lianj" data-idx="{{index}}"  class="{{index==xindex?'imageBanner':'imageBanner_small'}}"/>
+              <image src='{{encode}}' data-src='{{encode}}' bindtap='detailencode' style="display:{{index==xindex?'block':'none'}};position:absolute;width:150rpx;height:150rpx;right:0;bottom:0;z-index:2;margin:0;border-radius:0;"></image>
+            </view>
+              
+          </swiper-item>
+      </swiper>
+      <!-- <swiper class='bannerSwiper' previous-margin="54rpx" next-margin='54rpx' indicator-dots="true" indicator-color='#B5B5B5' indicator-active-color='#fff' interval='3000' duration='500' bindchange='onChange' circular='true'>
+      <block wx:for="{{banner}}">
+        <swiper-item>
+          <image class="{{index==xindex?'imageBanner':'imageBanner_small'}}" src="{{item}}" id='{{item.url}}' bindtap='imageClick'></image>
+        </swiper-item>
+      </block>
+    </swiper> -->
+    </view>
+    
+    <view class='bottomC'>
+      <button class='i' open-type='share' hover-class='none' bindtap='shareFn'>
+        <view class='i'>
+        
+          <image style='' src='/images/icon/weixin.png'></image>
+          <view>分享好友</view>
+        </view>
+      </button>
+      <view bindtap='toSaveImage' class='i'>
+        <image src='/images/icon/xiazai.png'></image>
+        <view>保存图片</view>
+      </view>
+    </view>
+  </view>
+</view>

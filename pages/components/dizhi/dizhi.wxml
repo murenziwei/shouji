@@ -1,0 +1,32 @@
+<view class="page">
+  <view class="shouhuo" wx:for="{{shuliang}}" wx:for-item="item" wx:key="{{index}}" bindtap='choose'>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">{{item.addr_name}}</view>
+      <view class="weui-cell__ft">{{item.addr_mobile}}</view>
+    </view>
+    <view class="dizhi">
+      <text>{{item.addr_sheng}},{{item.addr_city}},{{item.addr_qu}},{{item.addr_attach}}</text>
+    </view>
+    <view class="dizhi1">
+      <view style="height:auto;width:50%;display:flex;line-height:50px;" bindtap='moren'data-idx = "{{item.default_addr}}" data-id='{{item.id}}'>
+        <!-- <image src="{{item.default_addr == 1?'../../../img/hdui.png':'../../../img/bdui.png'}}" style="width:17px;height:17px;margin-top:9%;margin-right:3%;"></image> -->
+        <icon class="iconfont icon-morendizhi" style="width:17px;height:17px;margin-top:1%;margin-right:3%;{{item.default_addr == 1?'color:red':'color:#e2e2e2'}}"></icon>
+        <view> 设为默认地址</view>
+      </view>
+      <view style="height:100%;width:50%;display:flex;margin:auto;">
+        <view class="bianji" bindtap='shouhuo' data-id = "{{item.id}}" data-name="{{item.addr_name}}" data-phone = "{{item.addr_mobile}}" data-sheng="{{item.addr_sheng}}" data-shi="{{item.addr_city}}" data-qu = "{{item.addr_qu}}" data-xx="{{item.addr_attach}}" data-moren = "{{item.default_addr}}">编辑</view>
+        <view class="bianji" bindtap='shanchu' data-id = "{{item.id}}" data-idx="{{index}}">删除</view>
+      </view>
+    </view>
+  </view>
+  
+  <view style="width:100%;height:400rpx;text-align:center;" wx:if="{{shuliang.length==0}}">
+    <image src="/images/icon/meiyou.png" style="width:200rpx;" class="zanwu" mode="aspectFit"></image>
+  </view>
+  <view style="width:100%;height:50px"></view>
+  <view class="dingwei">
+    <button bindtap='backnav' class="weui-btn yiban" style="color:#fff;background-color:#fe5325;">确认</button>
+    <button bindtap='tiaozhuan' class="weui-btn yiban" type="warn">新增地址</button>
+    <button bindtap='tiaozhuan1' class="weui-btn yiban1" type="primary">获取地址</button>
+  </view>
+</view>

@@ -1,0 +1,111 @@
+<view class="page" wx:hidden="{{ishidden}}">
+  <form class='form-card'>
+    <view class="lw-weui-cells__title sp-title">基本信息
+    </view>
+    <view class="lw-weui-cells lw-weui-cells_after-title">
+      <view class="lw-weui-cell lw-weui-cell_input">
+        <view class="lw-weui-cell__hd ">
+          <view class="lw-weui-label">联系人</view>
+        </view>
+        <view class="lw-weui-cell__bd">
+          <input class="lw-weui-input" bindinput='xingming' placeholder="请输入姓名" />
+        </view>
+      </view>
+      <view class="lw-weui-cell lw-weui-cell_input">
+        <view class="lw-weui-cell__hd">
+          <view class="lw-weui-label">联系电话</view>
+        </view>
+        <view class="lw-weui-cell__bd">
+          <input class="lw-weui-input" bindinput='phone' placeholder="请输入手机号码" />
+        </view>
+      </view>
+    </view>
+    <view class="lw-weui-cells__title sp-title">店铺信息
+    </view>
+    <view class="lw-weui-cells lw-weui-cells_after-title">
+      <view class="lw-weui-cell lw-weui-cell_input">
+        <view class="lw-weui-cell__hd">
+          <view class="lw-weui-label">店铺名称</view>
+        </view>
+        <view class="lw-weui-cell__bd">
+          <input class="lw-weui-input" bindinput="dianpu" placeholder="请输入店铺名称" />
+        </view>
+      </view>
+      <view class="lw-weui-cell lw-weui-cell_input">
+        <view class="lw-weui-cell__hd">
+          <view class="lw-weui-label">所在地区</view>
+        </view>
+        <view class="lw-weui-cell__bd nihao">
+            <picker mode='region' class='picker' bindchange='siteFn'>
+              {{region[0]}}—{{region[1]}}—{{region[2]}}
+            </picker>
+            <!-- <view style="height:auto;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" class="picker" bindtap='dianji'>
+              {{region[0]}}-{{region[1]}}-{{region[2]}}
+            </view> -->
+            <!-- <picker  style="height:auto;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" class="picker" mode="region" bindchange="bindRegionChange">
+                {{district}}
+            </picker> -->
+          </view>
+      </view>
+      <view class="lw-weui-cell lw-weui-cell_input">
+        <view class="lw-weui-cell__hd">
+          <view class="lw-weui-label">详细地址</view>
+        </view>
+        <view class="lw-weui-cell__bd" style="display:flex">
+          <input class="lw-weui-input" style="width:100%" value="{{weizhi}}" placeholder="请输入详细地址"/>
+          <view bindtap="map" class="dangqianweiz iconfont icon-dingwei"></view>
+        </view>
+      </view>
+      <view class="lw-weui-cell lw-weui-cell_select">
+        <view class="lw-weui-cell__hd lw-weui-cell__hd_in-select-after">
+          <view class="lw-weui-label">主营产品</view>
+        </view>
+        <view class="lw-weui-cell__bd">
+            <picker class='wcb-picker' bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}" range-key="{{'type_name'}}">
+              <view class="lw-weui-select lw-weui-select_in-select-after">{{countries[countryIndex].type_name}}</view>
+              <!-- <view class="lw-weui-select lw-weui-select_in-select-after" wx:if="{{kais == 1}}">{{moren.type_name}}</view> -->
+            </picker>
+            
+            <view class="iconfont icon-jiantou wc_icon"></view>
+          </view>
+      </view>
+      
+      <view class="shop_pic">
+        <view class="" style="font-size:30rpx;color:#555555">
+          店铺照片
+          <view style="font-size:20rpx;color:#808080">750x750</view>
+        </view>
+        <view class="more-img">
+          <block wx:for="{{files}}" wx:key="*this">
+            <view class="lw-weui-uploader__file more_frame" bindtap="previewImage" id="{{item}}" >
+              <image class="lw-weui-uploader__img see_img image" src="{{item}}" mode="aspectFill"  />
+            </view>
+          </block>
+          <view class="" wx:if="{{files.length==0}}">
+            <view class="upload-img iconfont icon-zengjia" bindtap="chooseImage"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <button class="tijiao" bindtap='tioaji'>确认申请</button>
+  </form>
+</view>
+<view class="qilai" style="width:100%;height:auto;{{yeas == 0?'display:none':'display:block'}}">
+  <view class="zhedang" bindtap='zhedan'></view>
+  <view class="zidingyi">
+    <view style="font-size:30rpx;color:#e2e2e2;margin-left:15rpx;margin-top:15rpx;" bindtap='zhedan'>取消</view>
+    <view style="font-size:32rpx;color:#000;margin-top:15rpx;">选择地区</view>
+    <view style="font-size:30rpx;color:#d563a0;margin-right:15rpx;margin-top:15rpx;" bindtap='zhedan'>确定</view>
+  </view>
+  <picker-view class="pickerView" indicator-style="height: 50px;" style="width: 100%;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{choice}}" wx:for-item="item" data-index="{{index}}" style="line-height: 50px;text-align:center;background-color:#fff">{{item.chinese_name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{eciohc}}" wx:for-item="res" style="line-height: 50px;text-align:center;background-color:#fff">{{res.chinese_name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{iceohc}}" wx:for-item="res" style="line-height: 50px;text-align:center;background-color:#fff">{{res.chinese_name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

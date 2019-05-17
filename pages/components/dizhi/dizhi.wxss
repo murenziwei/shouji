@@ -1,0 +1,83 @@
+@import "/utils/weui.wxss";
+.page{
+  width:100%;
+  overflow: inherit;
+  height:100vh;
+  background-color:#f8f8f8;
+}
+.shouhuo{
+  width:100%;
+  height:auto;
+  background-color:#fff;
+  margin-top:3%;
+}
+.weui-cell__bd{
+  font-weight: 600;
+  font-size:17px;
+}
+.weui-cell__ft{
+  font-weight: 600;
+  color:#666666;
+  font-size:17px;
+}
+.dizhi{
+  padding:22px 15px;
+  font-size:16px;
+  color:#696969;
+  line-height: 16px;
+  display: flex;
+justify-content:space-between; 
+}
+.dizhi>text{
+  overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.yanse{
+  background-color:#fd5a69;
+  color:#fd5a69;
+}
+.dizhi1{
+  padding:3px 15px;
+  height:auto;
+  font-size:16px;
+  color:#737373;
+  display: flex;
+  border-top:2px dotted  #ede7e8;
+}
+.bianji{
+  width:40%;
+  height:auto;
+  border:1px solid #e2e2e2;
+  line-height:40px;
+  text-align: center;
+  border-radius: 5px;
+  margin-left:10%;
+}
+.dingwei{
+  width:100%;
+  position: fixed;
+ bottom:0px;
+  left:0px;
+  display: flex;
+}
+.yiban{
+  width:49.9%;
+  border-radius: 0px;
+  height:100rpx;
+  line-height: 100rpx;
+}
+.yiban1{
+  width:49.9%;
+  background-color:green;
+  border-radius: 0px;
+  height:100rpx;
+  line-height: 100rpx;
+}
+.weui-btn{
+  margin-top:0px!important;
+  font-size:30rpx;
+}
+.dingwei>button:after{
+  border:none;
+}

@@ -1,0 +1,97 @@
+@import "/utils/weui.wxss";
+.page{
+  width:100%;
+  overflow: inherit;
+  height:100vh;
+  background-color:#f6f8fc;
+}
+.diyg{
+  margin-top:3%
+}
+.baise{
+  border-top:1px solid #fff;
+}
+.nihao{
+  height:110rpx;
+  width:100%;
+  line-height: 110rpx;
+  background-color:#fff;
+}
+.weui-input{
+   height: 3.58823529em;
+  min-height: 3.58823529em;
+  line-height: 3.58823529em;
+}
+.picker{
+  font-size: 16px;
+  width:100%;
+  margin-left:35rpx;
+}
+.weui-cell__ft_in-access{
+  padding-right:200px;
+}
+.weui-cell{
+  background-color:#fff;
+
+}
+.diqu{
+  padding:10px 15px;
+  
+}
+.weui-cell__ft{
+  width:10%;
+}
+picker{
+  width:100%;
+}
+.biank{
+  padding:19px 15px;
+  display: flex;
+justify-content:space-between; 
+}
+.biank1{
+  border-top:1px solid #fff;
+}
+.page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top:10%;
+}
+.shijiu{
+  padding:19px 15px;
+}
+
+.qilai{
+  position: fixed;
+  top:0rpx;
+  bottom:0rpx;
+  z-index:9999;
+}
+.zhedang{
+  width:100vw;
+  height:100vh;
+  position: absolute;
+  top:0;
+  left:0;
+  background-color:#000;
+  opacity:0.3;
+  z-index:996
+}
+.zidingyi{
+  position: absolute;
+  bottom:300rpx;
+  left:0rpx;
+  display: flex;
+  justify-content:space-between; 
+  width:100%;
+  background-color:#fff;
+  z-index:999;
+}
+.pickerView{
+  height:300rpx;
+  position: absolute;
+  bottom:0rpx;
+  left:0rpx;
+  z-index:999;
+  background-color:#fff;
+}

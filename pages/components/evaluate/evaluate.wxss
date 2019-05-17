@@ -1,0 +1,75 @@
+.paizhao {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #696969;
+  font-size: 12px;
+}
+
+.scpz {
+  font-size: 12px;
+  text-align: center;
+}
+
+.page {
+  width: 93%;
+  overflow: hidden;
+  display: flex;
+  background-color:#fff;
+  padding:15px;
+}
+.hons{
+  color:#ff4e4e!important;
+}
+.haoping {
+  width: 96%;
+  height: auto;
+  padding: 15px 10px;
+  display: flex;
+  border-top:1px solid #e2e2e2;
+  border-bottom:1px solid #e2e2e2;
+  background-color:#fff;
+}
+
+.tup {
+  width: 16%;
+  height: 100%;
+}
+
+.hao {
+  width: 28%;
+  height: 100%;
+margin-top:1%;
+  display: flex;
+}
+
+.ping {
+  font-size: 16px;
+  line-height: 25px;
+  width:100%;
+  color:#666666;
+}
+.ziti{
+  font-size:16px;
+
+  width:96%;
+  padding:10px;
+  background-color:#fff;
+}
+.page1{
+  width:100%;
+  overflow: hidden;
+}
+page{
+  width:100%;
+  height:100vh;
+  background-color:#f6f8f9;
+}
+.tijiao{
+  width:100%;
+  background-color:#ff4544;
+  color:#fff;
+  position: absolute;
+  bottom:0px;
+  left:0px;
+  border-radius: 0px;
+}

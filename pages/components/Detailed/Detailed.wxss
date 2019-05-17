@@ -1,0 +1,48 @@
+.weui-navbar__slider{
+  width:10%;
+}
+.page{
+  width:100%;
+  height:100vh;
+  background-color:#f0eff5;
+}
+.tixian{
+  width:95%;
+  height:130rpx;
+  display: flex;
+  padding:14rpx 19rpx;
+}
+.page__bd{
+  background-color:#fff;
+}
+.yiban{
+  width:85%;
+  height:100%;
+}
+.yiban1{
+  width:15%;
+  height:100%;
+  font-size: 32rpx;
+  color:red;
+  line-height: 115rpx;
+}
+.yikuiai{
+  font-size:30rpx;
+  line-height:77rpx;
+}
+.shij{
+  font-size: 22rpx;
+  line-height: 33rpx;
+}
+.meiyou{
+  width:100%;
+  height:100vh;
+  position: relative
+}
+.kong{
+  width:200rpx;
+  height:200rpx;
+  position: absolute;
+  top:23%;
+  left:39%;
+}

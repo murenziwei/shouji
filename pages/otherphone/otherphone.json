@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "素材库",
+  "usingComponents": {
+    "shareAndKefu": "/components/shareAndKefu/index"
+  }
+}

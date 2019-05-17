@@ -1,0 +1,4 @@
+<view class="zhongjian" bindtap="chuantu">
+  <image src="../../../img/jia.png" style="width:127rpx;height:130rpx;color:red;margin-left:10rpx" mode='widthFix'></image>
+  <view style="font-size:30rpx;color:red;text-align:center">添加图片</view>
+</view>

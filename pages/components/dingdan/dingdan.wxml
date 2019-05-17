@@ -1,0 +1,97 @@
+<view class="page">
+  <!-- 地址 -->
+  <block wx:if="{{pandaunnima == 0}}">
+    <view class="dizhi" bindtap='tiao'>
+      <view class="zuishao">
+        <icon class="iconfont icon-weizhi" style="font-size:70rpx;line-height:170rpx;color:#bebebe"></icon>
+      </view>
+      <view class="zuida">
+        <view class="name">
+          <text>{{name}}</text>
+          <text>{{phone}}</text>
+        </view>
+        <view class="ziti">收货地址：{{zhidi}}</view>
+      </view>
+      <view class="zuihou">
+        <icon class="iconfont icon-right jiantou"></icon>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{pandaunnima == 101}}">
+    <view class="dizhi" bindtap='tiao' >
+      <view class="zuishao">
+        <icon class="iconfont icon-weizhi" style="font-size:70rpx;line-height:170rpx;color:#bebebe"></icon>
+      </view>
+      <view class="zuida tianjiaz">
+        请添加地址
+      </view>
+      <view class="zuihou">
+        <icon class="iconfont icon-right jiantou"></icon>
+      </view>
+    </view>
+  </block>
+  <!-- 商品 -->
+  <view class="zuiwam">
+    <view class="yige">
+      <view class="tupian">
+        <view class="guohou">
+
+         <!-- <image src="{{img}}" mode="aspectFit	" data style="{{peyt == 1?'width: 50%;height: 80%;':''}}" class="daxiao"></image> -->
+          <image src="{{img}}" 	class="daxiao"></image>
+        </view>
+      </view>
+      <view class="huali">
+        <view>
+         
+          <view class="mingc">{{goods_name}}</view>
+          <view class="pingp">{{sheb}}</view>
+          <view class="pingp">{{gg}}</view>
+        </view>
+        <view class="red">
+          <text>￥{{p_price_sale}}</text>
+          <view class="stepper" bindtap='bain'>
+            <!-- 减号 -->
+            <text class="{{minusStatus}} iconfont icon-iconless1" bindchange="bindManual" bindtap="bindMinus"></text>
+            <!-- 数值 -->
+            <input type="number" bindchange="bindManual" disabled='true' value="{{p_buyNumble}}" />
+            <!-- 加号 -->
+            <text class="normal iconfont icon-zengjia" bindchange="bindManual" bindtap="bindPlus"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__hd">
+        <!-- <image src="../../../img/qian.png" style="background-color:#d563a0;color:#d563a0;margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image> -->
+      </view>
+      <view class="weui-cell__bd">总计</view>
+      <view class="weui-cell__ft">￥{{p_totalMoney}}</view>
+    </view>
+    <view class="weui-cell" wx:if="{{p_hasFreight == 0}}">
+      <view class="weui-cell__bd">运费</view>
+      <view class="weui-cell__ft">￥{{p_freight}}</view>
+    </view>
+    <view class="weui-cell" wx:else if="{{p_hasFreight == 32}}">
+      <view class="weui-cell__bd">运费</view>
+      <view class="weui-cell__ft">不在邮寄范围</view>
+    </view>
+    <!-- <view class="weui-cell weui-cell_switch">
+      <view class="weui-cell__bd">使用{{p_golgPay}}金币抵扣
+        <text style='color:#ff242a'>{{p_golgPay}}</text>元
+      </view>
+      <view class="weui-cell__ft">
+        <switch bindchange='kaiguan' checked="{{p_goldSwith}}"/>
+      </view>
+    </view> -->
+  </view>
+
+  <!-- 提交订单 -->
+  <view class="tijiao">
+    <view class="shifu">实付金额：
+      <text style="color:#ff292e;margin-right:30rpx;">￥{{p_payMoney}}</text>
+    </view>
+    <view class="jinge background-color" bindtap='tijiao'>提交订单</view>
+  </view>
+</view>

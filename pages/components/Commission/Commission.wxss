@@ -1,0 +1,53 @@
+.tix {
+  width: 100%;
+  height: 200rpx;
+  background-color: #ff4548;
+  display: flex;
+}
+
+.ketixan {
+  width: 70%;
+  height: 100%;
+}
+
+.tixiam {
+  width: 30%;
+  height: 100%;
+  position: relative;
+}
+
+.zit {
+  color: #fff;
+  font-size: 32rpx;
+}
+.yongk{
+line-height: 100rpx;
+margin-left:20rpx;
+}
+.yuan{
+  line-height: 50rpx;
+  margin-left:20rpx;
+}
+.tixian{
+  width:135rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  border:1px solid #fff;
+  text-align: center;
+  border-radius: 10rpx;
+  position: absolute;
+  top:65rpx;
+  left:70rpx;
+}
+.page{
+  width:100%;
+  height:100vh;
+  background-color:#f0eff5;
+}
+.shang{
+  margin-top:20rpx;
+}
+.abg{
+  margin-top:100rpx;
+  background-color:#f0eff5;
+}

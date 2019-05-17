@@ -1,0 +1,152 @@
+/* pages/myshop/index.wxss */
+.container{
+  background: #eeeeee;
+  height: 100vh;
+}
+.top{
+  height: 250rpx;
+  background: #fd746e;
+  text-align: center;
+  color: #fff;
+  display:flex;
+  width:100%;
+  box-sizing: border-box;
+  padding:0 50rpx;
+  align-items:center;
+}
+.bt{
+  border: 1rpx solid #fff;
+  width: 220rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 30rpx;
+  margin: 0 auto;
+}
+.money-history{
+  width:100%;
+  /* height:200rpx; */
+  background-color:#fff;
+  padding:0 20rpx;
+  box-sizing: border-box;
+}
+.asd{
+  box-sizing: border-box;
+  background: #fff;
+  z-index:2;
+  transform:translateY(-25px);
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  height:200rpx;
+  align-items:center;
+  border-radius:10rpx;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.asd >view{
+  flex: 1;
+  text-align: center;
+  line-height: 50rpx;
+}
+.six{
+  display: flex;
+  background: #fff;
+  flex-flow: wrap;
+  /* justify-content: space-around; */
+  padding: 30rpx;
+  transform:translateY(-20px);
+}
+.six-item{
+  /* flex: 0 0 200rpx; */
+  text-align: center;
+  font-size: 24rpx;
+  padding-bottom: 40rpx;
+  line-height: 38rpx;
+  width:33%;
+  box-sizing: border-box;
+}
+.six image{
+  width: 120rpx;
+  height: 120rpx;
+  /* background: #eee; */
+  margin-bottom: 10rpx;
+}
+
+
+/* 推广二维码 */
+
+.zhedang{
+  width:100vw;
+  height:100vh;
+  background-color:rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top:0rpx;
+  left:0rpx;
+  z-index:98;
+}
+.zhongjian{
+  width:80%;
+  height:40%;
+  position: absolute;
+  /* background-color:#fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:-600rpx;
+  margin:auto;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:99;
+}
+.zhongj{
+  width:350rpx;
+  height:350rpx;
+}
+.cancel-f{
+  position:absolute;
+  bottom:200rpx;
+  right:0;
+  left:0;
+  width:100%;
+  text-align: center;
+}
+.image{
+  width:500rpx!important;
+}
+
+/* lw */
+.my-top{
+  display:flex;
+  align-items:center;
+  width:100%;
+  font-size:25rpx;
+}
+.mrt-name{
+  font-size:30rpx;
+}
+.ml-img{
+  width:100rpx;
+  height:100rpx;
+  border-radius:100%;
+}
+.mt-right{
+  flex:1;
+  padding-left:20rpx;
+}
+.m-r-bottom{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  padding:10rpx 0;
+}
+.m-r-top{
+  text-align:left;
+}
+.mrt-grade{
+  background-color:#ffffff;
+  color:#fd746e;
+  font-size:25rpx;
+  margin-left:10rpx;
+  border-radius:5rpx;
+  padding:0 5rpx;
+}

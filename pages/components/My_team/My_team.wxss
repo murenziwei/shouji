@@ -1,0 +1,52 @@
+.biank {
+  border-bottom: 20rpx solid #f0eff5;
+}
+.yiqi{
+  display: flex;
+}
+.page{
+  width:100%;
+  height:auto;
+  overflow: hidden;
+}
+.page1{
+    width: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    height:100%;
+}
+.waim{
+   width:140rpx;
+  height:170rpx;
+  position: fixed;
+  top:28%;
+  left:40%;
+}
+.zwsj{
+  width:138rpx;
+  height:115rpx;
+}
+.zwdd{
+  font-size: 30rpx;
+  text-align: center;
+  color:red;
+}
+.child-frame{
+  background-color:#f0eff5;
+}
+.child-item{
+  border-bottom:1px solid #eee;
+}
+.child-item:last-child{
+  border-bottom:0;
+}
+.money-active{
+  color:burlywood;
+
+}
+.rotate{
+  transform:rotateZ(45deg);
+}

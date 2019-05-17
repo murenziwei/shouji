@@ -1,0 +1,81 @@
+page {
+ 
+  width: 100%;
+ 
+  height: 100%;
+ 
+  background: #ffffff;
+ 
+}
+ 
+.touch-container {
+ 
+  width: 100%;
+ 
+  height: 100%;
+ 
+  padding-top: 0.1px;
+ 
+}
+ 
+.msg {
+ 
+  width: 100%;
+ 
+  height: 60rpx;
+ 
+  line-height: 60rpx;
+ 
+  text-align: center;
+ 
+  font-size: 30rpx;
+ 
+  color: #666666;
+ 
+}
+ 
+.img {
+  z-index: 66;
+  position: absolute;
+ 
+  width: 690rpx;
+ 
+  height: 300rpx;
+ 
+  transform-origin: center center;
+ overflow:hidden;
+}
+.chaochuyingc{
+  width:383rpx;
+  height:793rpx;
+  position: relative;
+  top:186rpx;
+  left:181rpx;
+  overflow:hidden;
+  z-index: 64;
+  border-radius: 60rpx;
+}
+.shoujike{
+  position: absolute;
+  top:-28rpx;
+  left:-249rpx;
+  width: 883rpx;
+  height: 852rpx;
+  z-index:65;
+}
+.tup{
+  width:883rpx;
+  height:852rpx;
+  position: absolute;
+  top:-29rpx;
+  left:-249rpx;
+  z-index:67
+}
+.kuangpng{
+  width:822rpx;
+  height:837rpx;
+  position: absolute;
+  top:165rpx;
+  left:-39rpx;
+  z-index:5;
+}

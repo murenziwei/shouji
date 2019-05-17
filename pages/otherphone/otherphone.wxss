@@ -1,0 +1,146 @@
+/* pages/otherphone/otherphone.wxss */
+.nav{
+  height:88rpx;
+  display:flex;
+  align-items:center;
+  border-bottom:2rpx solid rgba(229, 229, 229, 0.52);
+  padding-left:35rpx;
+  margin-bottom:10rpx;
+  position:fixed;
+  background-color:#fff;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+
+}
+.scroll-view_H{
+  white-space: nowrap;
+  height: 100%;
+}
+.scroll-content{
+  min-width: 120rpx;
+  height: 80rpx;
+  text-align: center;
+  display: inline-block;
+  margin-right: 88rpx;
+	font-family: PingFang-SC-Medium;
+	font-size: 28rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 95rpx;
+	letter-spacing: 0px;
+	color: #000000;
+
+}
+.set-color{
+  border-bottom: 2rpx solid #ff6122;
+}
+.nav-list-images{
+  padding: 0 30rpx;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  /* padding-top: 110rpx; */
+  margin-top:99rpx;
+}
+.imgs{
+  flex: 0 0 210rpx;
+  /* border: 1rpx solid #ddd; */
+  margin-bottom: 20rpx;
+}
+.imgs image{
+  width: 100%;
+}
+.nav-list-images>image{
+  width: 216rpx;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+  display: inline-block;
+  margin-top: 10rpx;
+  border: 1rpx solid #ff6122;
+}
+.image-box{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.loginbox{
+width: 100%;
+height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 99999;
+}
+.loginsbox{
+width: 620rpx;
+height: 380rpx;
+border-radius: 8rpx;
+background-color: #fff;
+position: absolute;
+left: 0;right: 0;top: 0;bottom: 0;margin: auto;
+}
+.login-title{
+width: 100%;
+height: 96rpx;
+line-height: 96rpx;
+text-align: center;
+font-size: 32rpx;
+color: #555;
+border-bottom: 1rpx solid #f1f1f3;
+}
+.login-tip{
+width: 80%;
+line-height: 70rpx;
+margin: 30rpx auto 0 auto;
+font-size: 28rpx;
+border-bottom: 1rpx solid #eee;
+}
+.login-content{
+width: 80%;
+font-size: 28rpx;
+color: #555;
+margin: 0 auto;
+margin-top: 20rpx;
+}
+.loginsbox button{
+width: 100%;
+height: 88rpx;
+position: absolute;
+bottom: 0;
+left: 0;
+border: 0;
+border-radius: 0;
+border-top: 1rpx solid #f1f1f3;
+background-color: #fff;
+font-size: 32rpx;
+color: #51AA38;
+letter-spacing: 2rpx;
+border-bottom-left-radius: 8rpx;
+border-bottom-right-radius: 8rpx;
+}
+.loginsbox button::after{
+border: 0;
+}
+
+.invite{
+  position: fixed;
+  right: 24rpx;
+  bottom: 120rpx;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  /* background-color: #fff; */
+  z-index: 100;
+  
+}
+.invite::after{
+  border: 0;
+}
+.invite image{
+  width: 85rpx;
+  height: 85rpx;
+}

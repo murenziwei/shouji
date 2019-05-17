@@ -1,0 +1,100 @@
+/* pages/xianxia/index.wxss */
+
+.container {
+  height: 100vh;
+  background: #f1f1f1;
+  padding: 30rpx;
+}
+
+.content {
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  box-shadow: 1rpx 1rpx 50rpx #ddd;
+}
+
+.title {
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.title>.iconfont{
+  font-size:30rpx;
+}
+
+.title image {
+  width: 40rpx;
+  height: 40rpx;
+  background: #eee;
+  vertical-align: middle;
+}
+
+.item {
+  display: flex;
+  line-height: 50rpx;
+  padding: 20rpx 0;
+  border-bottom: 0.5px solid #eee;
+}
+
+.img-item {
+  line-height: 50rpx;
+  padding: 20rpx 0;
+}
+
+.label {
+  flex: 0 0 120rpx;
+}
+
+input {
+  flex: 1;
+  text-align: right;
+}
+
+button {
+  margin: 120rpx 0 40rpx;
+}
+
+.submit-btn {
+  background-color: #fd706d !important;
+  font-size: 35rpx;
+}
+
+.ci-add {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.cImg {
+  height: 400rpx;
+  text-align: center;
+  /* line-height:200rpx; */
+  width: 100%;
+  border: 1px solid #f1f1f1;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.upload-item {
+  position: relative;
+  width: 100%;
+}
+
+.ui-img {
+  width: 100%;
+}
+
+.upload-del {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.dangqianweiz {
+  font-size: 40rpx;
+}

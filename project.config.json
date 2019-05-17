@@ -1,0 +1,219 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.5",
+	"appid": "wxcb6933037843671b",
+	"projectname": "shoujike",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 24,
+			"list": [
+				{
+					"id": -1,
+					"name": "mine",
+					"pathName": "pages/mine/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "myshop",
+					"pathName": "pages/myshop/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "ruzhu",
+					"pathName": "pages/ruzhu/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "orderDetail",
+					"pathName": "pages/order/orderDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "addressManage",
+					"pathName": "pages/address/addressManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "addressAddress",
+					"pathName": "pages/address/addAddress",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "dingzhi",
+					"pathName": "pages/dingzhi/dingzhi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "canvas",
+					"pathName": "pages/canvas/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "others",
+					"pathName": "pages/others/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pRuZhu",
+					"pathName": "pages/pRuZhu/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "cooperation",
+					"pathName": "pages/cooperation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "teamApply",
+					"pathName": "pages/teamApply/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "xianxia",
+					"pathName": "pages/xianxia/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "店长申请",
+					"pathName": "pages/components/Shopkeeper/Shopkeeper",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "t",
+					"pathName": "pages/teamApply/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "friend",
+					"pathName": "pages/friend/friend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "团队店长",
+					"pathName": "pages/teamApply/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index1/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/components/Put_forward/Put_forward",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的店铺",
+					"pathName": "pages/components/Distribution/Distribution",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "audit",
+					"pathName": "pages/audit/audit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的团队",
+					"pathName": "pages/components/My_team/My_team",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "总订单数",
+					"pathName": "pages/components/all_order/all_order",
+					"scene": null
+				}
+			]
+		}
+	}
+}

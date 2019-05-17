@@ -1,0 +1,186 @@
+<view class="page">
+  <view class="quanp {{xians == 1?'xians':'yc'}}" bindtap='dianyix'></view>
+  <block wx:if="{{goods_video == ''}}">
+    <swiper class="swiper" style="height:{{broaHeight}}rpx;" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{goods_images}}" wx:for-index="index">
+        <swiper-item>
+          <image src="{{goods_images[index]}}" style="width:100%;height:{{broaHeight}}rpx;" class="slide-image" mode="aspectFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </block>
+  <block wx:else>
+    <view class="swiper" >
+      <video id="myVideo" src='{{goods_video}}' bindtap="bofang" controls='true' wx:if="{{video == 0}}"></video>
+    </view>
+  </block>
+  <view class="shangping">
+    <view class="mingc">
+      <view class="mingcheng">{{goods_name}}</view>
+      <view style="font-size:25rpx;line-height:43rpx;display:flex;justify-content:space-between;margin-top:20rpx;">
+        <view style="color:red;">价格:￥{{spprice}} <text style="margin-left:38rpx;" wx:if="{{role == 2}}"> 原价:￥{{price_cost}}</text></view>
+        <view>购买:{{sale_virtual}}人</view>
+      </view>
+    </view>
+    <!-- 收藏 -->
+    <view class="shouc" bindtap='shouchang'>
+      <icon class="iconfont icon-xin" style="font-size:58rpx;{{shouchang == 101?'color:#e2e2e2':'color:#e49d04;'}}" bindtap='quxiao'></icon>
+      <view>收藏</view>
+    </view>
+  </view>
+  <view class="youhui">
+    <view class="xianshiyouhui" wx:for="{{goods_service}}">
+      <image src="../../../img/dui.png" style="width:35rpx;height:35rpx;margin-top:14rpx"></image>
+      <text class="xianshiyouhui1">{{goods_service[index]}}</text>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'color' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider background-color" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class="xiangq">
+            <view class="pingl">
+              <view class="quanbu">
+                <view class="haop {{levl==0?'color':''}}" data-level="0" bindtap='qieh'>
+                  <view class="font">全部</view>
+                  <view class="font">({{quanbu}})</view>
+                </view>
+                <view class="haop {{levl==1?'color':''}}" data-level="1" bindtap='qieh'>
+                  <view class="font">好评</view>
+                  <view class="font">({{hp}})</view>
+                </view>
+                <view class="haop {{levl==2?'color':''}}" data-level="2" bindtap='qieh'>
+                  <view class="font">中评</view>
+                  <view class="font">({{zp}})</view>
+                </view>
+                <view class="haop {{levl==3?'color':''}}" data-level="3" bindtap='qieh'>
+                  <view class="font">差评</view>
+                  <view class="font">({{cp}})</view>
+                </view>
+              </view>
+              <block wx:if="{{pinglu == ''}}">
+                <view class="quanm">
+                  <icon class="iconfont icon-zanwupinglun" style="font-size:200rpx;color:#e2e2e2"></icon>
+                </view>
+              </block>
+              <block wx:else>
+                <view class="pinglu" wx:for="{{pinglu}}" wx:for-index="groupindex">
+                  <view class="name">
+                    <view class="bian">
+                      <view style='width:70rpx;;height:auto;'>
+                        <image src="{{item.user_avatar}}" style="width:50rpx;height:50rpx;border-radius:50%;margin-top:16rpx"></image>
+                      </view>
+                      <view>{{item.user_nick}}：</view>
+                    </view>
+                  </view>
+                  <view class="name1" style="line-height:28px;">{{item.comment_content}}</view>
+                  <view style="margin-top:3%;">
+                    <image wx:for="{{item.comment_images}}" wx:for-item="cell" wx:for-index="cellindex" src='{{cell}}' class="tupian" style="width:60px;height:60px;background-color:#e2e2e2"></image>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+          <view class="weui-loadmore weui-loadmore_line">
+          </view>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <import src="../../../wxParse/wxParse.wxml" />
+          <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+          <view style="width:100%;height:180rpx;"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="xiangqing"></view>
+  <!-- 领取 -->
+  <view class="dibu" wx:if="{{xians == 1}}">
+    <view class="index"bindtap='fanhui'>
+      <icon class="iconfont icon-tubiao115 color" style="font-size:48rpx;"></icon>
+      <view class="shouye">首页</view>
+    </view>
+    <button class="schang background-color" bindtap='lq'>立即购买</button><!-- bindtap='lq' -->
+  </view>
+  <!-- 选取规格 -->
+</view>
+<view class="guige {{xians == 1?'xians':'yc'}}">
+  <view class="tupiana" wx:if="{{xx.length !== 0}}">
+    <image class="tup" src='{{format_image}}'></image>
+    <icon class="iconfont icon-cuowu cuowu" bindtap='cuowu'></icon>
+  </view>
+    <view class="jixin" bindtap='xiugaijx'>
+      <view style="width:10%;">机型</view>
+      <view class="zhongj">|</view>
+      <view style="width:70%" wx:if="{{if == 1}}">{{shebei}}</view>
+      <view style="width:70%" wx:else>{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}</view>
+      <view class="xiugai">修改机型></view>
+    </view>
+  <view class="gongyi" wx:if="{{xx.length >= 1}}" data-e="1">
+    <view style="height:40rpx;">{{xx[0].format_name}}</view>
+    <view class="erzhongj">|</view>
+    <view class="da">
+      <view wx:for="{{xx[0].format_value}}" wx:for-item="idx" class="dal {{key == index?'yanqe color border':''}}" data-index="{{index}}" data-id="{{idx.id}}"data-id="{{idx.id}}" data-stock="{{idx.format_stock}}" data-sale="{{idx.format_sale}}" data-code="{{idx.format_code}}" data-price="{{idx.format_price}}" data-duibi="{{idx.id}}" data-code="{{idx.format_code}}"data-show="{{idx.value_show}}" data-image="{{idx.format_image}}" bindtap='yans' data-goumai="{{idx.format_stock - idx.format_sale}}">{{idx.value_name}}</view>
+    </view>
+  </view>
+  <view class="gongyi" wx:if="{{xx.length >= 2}}" data-e="2">
+    <view style="height:40rpx;">{{xx[1].format_name}}</view>
+    <view class="erzhongj">|</view>
+    <view class="da">
+      <view wx:for="{{dzx}}" data-index="{{index}}" wx:for-item="idx" class="dal {{key1 == index?'yanqe color border':''}}" data-id="{{idx.id}}" data-stock="{{idx.format_stock}}" data-sale="{{idx.format_sale}}" data-code="{{idx.format_code}}"data-show="{{idx.value_show}}" data-image="{{idx.format_image}}"  data-price="{{idx.format_price}}" bindtap='yans1'>{{idx.value_name}}</view>
+    </view>
+  </view>
+  <view class="gongyi" wx:if="{{xx.length >= 3}}" data-e="3">
+    <view style="height:40rpx;">{{xx[2].format_name}}</view>
+    <view class="erzhongj">|</view>
+    <view class="da">
+      <view wx:for="{{dzx1}}" wx:for-item="idx" class="dal {{idx.format_stock - idx.format_sale <= 0?'xuxian':''}} {{key2 == index?'yanqe color border':''}}" data-price="{{price}}" data-sale="{{idx.format_sale}}"data-image="{{idx.format_image}}" data-code="{{idx.format_code}}" data-index="{{index}}" data-id="{{idx.id}}" data-stock="{{idx.format_stock}}" data-show="{{idx.value_show}}" bindtap='yans2'data-goumai="{{idx.format_stock - idx.format_sale}}">{{idx.value_name}}</view>
+    </view>
+  </view>
+  <view class="gongyi" wx:if="{{xx.length >= 4}}" data-e="4">
+    <view style="height:40rpx;">{{xx[3].format_name}}</view>
+    <view class="erzhongj">|</view>
+    <view class="da">
+      <view class="dal {{key2 == index?'yanqe color border':''}}" data-index="{{index}}" wx:for="{{cs}}" wx:for-item="idx" data-id="{{idx.id}}" bindtap='yans2'data-goumai="{{idx.format_stock - idx.format_sale}}">{{idx.value_name}}</view>
+    </view>
+  </view>
+  <view class="rdjr background-color" bindtap='tiao'>确定选择</view>
+  <view class="duiwo"> </view>
+</view>
+<!-- 选择机型 -->
+<view class="qilai" style="width:100%;height:auto;{{yeas == 0?'display:none':'display:block'}}">
+  <view class="zhedang" bindtap='zhedan'></view>
+  <view class="zidingyi">
+    <view style="font-size:30rpx;color:#e2e2e2;margin-left:15rpx;margin-top:15rpx;" bindtap='zhedan'>取消</view>
+    <view style="font-size:32rpx;color:#000;margin-top:15rpx;">选择手机型号</view>
+    <view style="font-size:30rpx;color:#d563a0;margin-right:15rpx;margin-top:15rpx;" bindtap='zhedan'>确定</view>
+  </view>
+  <picker-view class="pickerView" indicator-style="height: 50px;" style="width: 100%;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{choice}}" wx:for-item="item" data-index="{{index}}" style="line-height: 50px;text-align:center;background-color:#fff">{{item.brand_name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{choice[index].brand_model}}" wx:for-item="res" style="line-height: 50px;text-align:center;background-color:#fff">{{res.model_code}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+<button style="{{p_userInfo == null?'':'display:none'}}" data-is="{{p_userInfo}}" open-type="getUserInfo" bindtap='onlogin' class="anniu"></button>
+
+
+<!-- 登录 -->
+<view class='loginbox' hidden="{{islogin}}">
+  <view class='loginsbox'>
+    <view class='login-title'>微信授权</view>
+    <view class='login-tip'>为了更好的体验，请先授权</view>
+    <view class='login-content'>· 获取你的公开信息（头像，昵称等。）</view>
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfo'>去授权</button>
+  </view>
+</view>

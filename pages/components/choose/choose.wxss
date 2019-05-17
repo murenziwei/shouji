@@ -1,0 +1,10 @@
+.zhongjian{
+  width:127rpx;
+  height:173rpx;
+  border-radius: 50rpx;
+  position: absolute;
+  top:37%;
+  left:40%;
+  justify-content: center;
+  align-items: center;
+}

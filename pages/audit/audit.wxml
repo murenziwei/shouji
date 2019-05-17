@@ -1,0 +1,8 @@
+<view style="width:100%;text-align:center;" class='fail_div'>
+  <!-- <image class='fail_img' src="{{fail.icon}}"  mode="aspectFit"></image> -->
+  <view class='fail_text iconfont {{fail.icon}}'>
+  </view>
+  <navigator style='font-weight:bold;margin:auto 100rpx;text-align:center;font-size:40rpx;' open-type='reLaunch' url='/pages/components/user/user' hover-class='none' class='nav_active'>返回个人中心</navigator>
+</view>
+
+<shareAndKefu bind:myevent="myevent" shareVal="{{false}}"></shareAndKefu>

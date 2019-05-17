@@ -1,0 +1,38 @@
+<!--pages/ruzhu/index.wxml-->
+<view class='container'>
+  <view wx:if="{{true}}" class='coverC'>
+    
+
+    <view class='topC'  data-a="123">
+        
+    <swiper circular="{{true}}" vertical="{{true}}"  autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}" indicator-active-color="#ff3e21" class="swiper yuanjiao" >
+      <block wx:for="{{haibao}}" wx:for-index="index">
+        <swiper-item class='yj-item'>
+          <view class="slide-url" >
+          
+            <image  src="{{item.banner_image}}" data-src="{{item.banner_image}}" bindtap="scaleImg" data-idx="{{index}}" class="slide-image image" mode="scaleToFill" binderror="errimg"  />
+          </view>
+        </swiper-item>
+        
+      </block>
+    </swiper>
+    </view>
+    
+    <view class='bottomC' wx:if="{{judge&&(!istuan)}}"> 
+      
+        <view class='i' bindtap='to_shop'>
+          你已经是{{grade}}
+        </view>
+    </view>
+    <view class='bottomC' wx:else> 
+      <block wx:for="{{shoparr}}" wx:for-index="index">
+        <navigator hover-class="none" url="{{item.url}}" class='i' data-ind='{{index}}' wx:if='{{item.isshow}}'>
+          {{item.name}}/{{item.money}}
+        </navigator>
+      </block>
+    </view>
+  </view>
+
+</view>
+
+<shareAndKefu bind:myevent="myevent" ></shareAndKefu>

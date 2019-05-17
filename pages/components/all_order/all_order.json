@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "线下订单",
+  "usingComponents": {
+    "shareAndKefu": "/components/shareAndKefu/index"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "shareAndKefu": "/components/shareAndKefu/index"
+  },
+  "navigationBarTitleText": "我的"
+}

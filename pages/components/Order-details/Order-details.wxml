@@ -1,0 +1,76 @@
+<view class="page">
+  <view class="shijian">
+    <image src="../../../img/shijian.png" style="width:25px;height:25px;margin-right:3%;margin-top:2%;"></image>
+
+    <view class="daifuk1">
+      <view class="daizhif" wx:if="{{zhuangtai == 1}}">待支付</view>
+      <view class="daizhif" wx:if="{{zhuangtai == 2}}">待发货</view>
+      <view class="daizhif" wx:if="{{zhuangtai == 3}}">待收货</view>
+      <view class="daizhif" wx:if="{{zhuangtai == 4}}">待完成</view>
+      <view class="daizhif" wx:if="{{zhuangtai == 6}}">已完成</view>
+      <view class="daizhif1">编号:\t{{code}}</view>
+    </view>
+    <!-- <view class="daojishi">支付倒计时:\t28分27秒</view> -->
+  </view>
+  <view class="xinxi">商品信息</view>
+  <view class="xian">
+    <view class="zuiwam" wx:for="{{spshuliang}}" wx:for-item="item">
+      <view class="yige">
+        <view class="tupian">
+          <view class="guohou">
+            <image src="{{tup}}" class="daxiao"></image>
+          </view>
+        </view>
+        <view class="huali">
+          <view class="mingc">{{item.goods_name}}</view>
+          <view class="pingp">{{item.format_name}}</view>
+          <view class="shuliang">x\t{{item.buy_numble}}</view>
+        </view>
+        <view class="erjiu">￥{{item.goods_price}}</view>
+      </view>
+    </view>
+    <view class="zongji">
+      <text class="yunfei">运费：￥{{express_total}}</text>
+      <view> 币付:\t
+        <text style="color:#ff373c">￥{{gold_pay}}　　</text>
+      </view>
+    </view>
+    <view class="zongji">
+      <text>　{{shijian}}</text>
+      <view> 实付:\t
+        <text style="color:#ff373c">￥{{cash_pay}}　　</text>
+      </view>
+    </view>
+  </view>
+  <view class="xinxi">配送信息</view>
+  <view class="dizhi">
+    <view class="zuishao">
+      <i class='iconfont icon-weizhi'></i>
+    </view>
+    <view class="zuida">
+      <view class="name">
+        <text>{{dizhi.addr_name}}</text>
+        <text>{{dizhi.addr_mobile}}</text>
+      </view>
+      <view class="ziti">收货地址：{{dizhi.addr_details}}</view>
+    </view>
+  </view>
+  <view class="xinxi" wx:if="{{tui_status == 3}}">拒绝理由</view>
+  <view class="dizhi" wx:if="{{tui_status == 3}}">
+    
+    <view class="zuida">
+      <view class="name" style='margin-left:24rpx;'>
+        <text>{{tui_content}}</text>
+        
+      </view>
+      
+    </view>
+   
+
+  </view>
+  <view style="width:100%;height:130px;background-color:#e2e2e2"></view>
+  <!-- 支付 -->
+</view>
+<view class="zifu" wx:if="{{zhuangtai == 1}}" bindtap='ljzf' data-id="{{order_code}}">立即支付</view>
+<view class="zifu" wx:if="{{zhuangtai == 3}}" bindtap='qush' data-id="{{order_code}}">确认收货</view>
+<view class="zifu" wx:if="{{zhuangtai == 4}}" bindtap='queren' data-id="{{order_code}}">确认完成</view>

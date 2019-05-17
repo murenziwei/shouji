@@ -1,0 +1,6 @@
+<!--components/canvas/index.wxml-->
+<view class='container'>
+<button bindtap='saveImage'>保存图片</button>
+  <canvas style="width: 750px; height: 1334px;position:absolute;right:1000rpx;top:900rpx;" canvas-id="canvas"></canvas>
+</view>
+

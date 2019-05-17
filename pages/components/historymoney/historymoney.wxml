@@ -1,0 +1,48 @@
+<view class='find'>
+   <view class='f-frame'>
+      <view class='money-ul'>
+        <block wx:for="{{listdata}}">
+        
+         <view class='money-list'>
+             <view class='ml-top'>
+                <view class='ml-t-left'>
+                <text class='m-icon iconfont icon-tixian'></text>
+                <text class='m-text'>提现</text>
+                </view>
+                <view class='ml-money'>
+                    {{item.pay_status}}+{{item.money}}元
+                </view>   
+             </view>
+             <view class='ml-bottom'>
+                <view class='m-b-item'>
+                   <view class='mbi-left'>
+                      <text class='mbi-icon iconfont icon-tiqu'></text>
+                      <text class='mbi-text'>申请提现时间</text>
+                   </view>
+                   <view class='mbi-time mbi-right'>
+                      {{item.apply_time}}
+                   </view>
+                </view>
+                
+                <view class='m-b-item'>
+                   <view class='mbi-left'>
+                      <text class='mbi-icon iconfont icon-zhuangtai'></text>
+                      <text class='mbi-text'>状态</text>
+                   </view>
+                   <view class='mbi-right'>
+                      <text class='mbi-active'>{{item.status}}</text>
+                   </view>
+                </view>
+             </view>
+         </view>
+        </block>
+        <block wx:if="{{listdata.length == 0}}">
+        <view style="width:100%;height:400rpx;text-align:center;">
+          <image src="/images/icon/meiyou.png" class="zanwu" mode="aspectFit"></image>
+        </view>
+        </block>
+      </view>
+
+   </view>
+</view>
+<shareAndKefu/>

@@ -1,0 +1,101 @@
+/* pages/commission/commission.wxss */
+.bg{
+  position: relative;
+}
+.bg-itme{
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+}
+.money{
+  text-align: center;
+  font-family: PingFang-SC-Medium;
+	font-size: 48rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 38rpx;
+	letter-spacing: 0px;
+	color: #fbfbfb;
+  margin-top: 73rpx;
+}
+.noney-tip{
+  text-align: center;
+  font-family: PingFang-SC-Medium;
+	font-size: 28rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 38rpx;
+	letter-spacing: 0px;
+	color: #fbfbfb;
+  margin-top: 52rpx;
+}
+.item-fix{
+  display: flex;
+  justify-content: space-around;
+  font-family: PingFang-SC-Medium;
+	font-size: 36rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 38rpx;
+	letter-spacing: 0px;
+	color: #000000;
+  text-align:center;
+  padding-top: 31rpx;
+  border-bottom: 10rpx solid #eee;
+  padding-bottom: 44rpx;
+}
+.fix-item{
+  display: flex;
+  flex-direction: column;
+}
+.fix-text{
+  font-family: PingFang-SC-Medium;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 38rpx;
+	letter-spacing: 0px;
+	color: #666666;
+  text-align:center;
+  display: inline-block;
+  margin-top: 24rpx;
+}
+.list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  height: 78rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.list>image{
+  width: 16rpx;
+	height: 28rpx;
+}
+.list>text{
+  font-family: PingFang-SC-Medium;
+	font-size: 26rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 38rpx;
+	letter-spacing: 0px;
+	color: #000000;
+}
+
+.selectbtn{
+  height: 98rpx;
+	background-color: #ff6122;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  line-height: 98rpx;
+  	font-family: PingFang-SC-Medium;
+	font-size: 30rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #ffffff;
+}

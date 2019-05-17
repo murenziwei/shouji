@@ -1,0 +1,44 @@
+/* pages/teamApply/index.wxss */
+.container{
+  height: 100vh;
+  background: #f1f1f1;
+  padding: 30rpx;
+}
+.content{
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  box-shadow: 1rpx 1rpx 50rpx #ddd;
+}
+.title{
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.title image{
+  width: 40rpx;
+  height: 40rpx;
+  background: #eee;
+  vertical-align: middle;
+}
+.item{
+  display: flex;
+  line-height: 50rpx;
+  padding: 20rpx 0;
+}
+.label{
+  flex: 0 0 120rpx;
+}
+input{
+  flex: 1;
+  text-align: right;
+}
+button{
+  margin: 120rpx 0 40rpx;
+}
+
+.s-b{
+  
+  background-color:#fd706d!important;
+
+  font-size:35rpx;
+}

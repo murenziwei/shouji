@@ -1,0 +1,249 @@
+<!--pages/index/index.wxml-->
+<view class='nav-phone'>
+
+  <view class='orlinfo'>
+    <image src='../../../img/shouji.png'></image>
+    <view class='type-info'>
+     
+      <view> {{phonetype}} </view>
+
+      <picker range="{{modelData}}" catchtap='rloadphonetype' mode = "multiSelector"> <text>修改</text> </picker>
+    </view>
+  </view>
+ 
+ 
+  <view class='order-btn'>
+    <text>下一步
+    提交订单</text>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<scroll-view class='diys-box'>
+
+<block wx:for="{{itemList}}">
+
+    <view wx:if="{{item.types == 'img'}}" class='canvass'  style='top:{{item.top}}px; left:{{item.left}}px; z-index:{{item.zindex}}' >
+            <view class='blocks' catchtap='catchtap' style="transform: scale({{item.scale}}) rotate({{item.angle}}deg);" >
+
+                <image catchtouchstart='WraptouchStart' mode='widthFix' data-selctid='{{item.id}}'  catchtouchmove="WraptouchMove"  class='block' src='{{item.image}}'  ></image>
+
+                <view class='close'style="transform-origin:center;" data-selctid='{{item.id}}' catchtap='closebtn'>
+                      <image src='../../../img/deleteicon.png'></image>
+                </view>
+
+                <view class='rotate'  data-selctid='{{item.id}}' bindtouchstart='touchStart' catchtouchmove='touchMove'>
+                
+                      <image src='../../../img/mar3.png' class='icon-move' mode='widthFix'></image>
+                </view>
+            </view>
+    </view>
+
+      <view wx:if="{{item.types == 'text'}}" class='canvass'  style='top:{{item.top}}px; left:{{item.left}}px; z-index:{{item.zindex}}' >
+            <view catchtap='catchtap' style="transform: scale({{item.scale}}) rotate({{item.angle}}deg);" >
+
+                <text catchtouchstart='WraptouchStart'  data-selctid='{{item.id}}'  catchtouchmove="WraptouchMove" class="fonst-size {{isdirection == true ?'':'text-styles'}}  Fonttype1"  style="color:{{isfonstcolor}}" src='{{item.image}}'  >
+                {{item.text}}
+                </text>
+
+                
+
+                <view class='close'style="transform-origin:center;" data-selctid='{{item.id}}' catchtap='closebtn'>
+                      <image src='../../../img/deleteicon.png'></image>
+                </view>
+
+                <view class='rotate'  data-selctid='{{item.id}}' bindtouchstart='touchStart' catchtouchmove='touchMove'>
+                
+                      <image src='../../../img/mar3.png' class='icon-move' mode='widthFix'></image>
+                </view>
+            </view>
+    </view>
+</block>
+
+
+
+
+<view class='diys-phonebg'>
+      <view class='diy-box'>
+        <image src='../../../img/p2.png' class='phone-mode' mode='widthFix' style='width:340rpx;'></image>
+        <image src='../../../img/p1.png' class='phone-mode'  mode='widthFix' style='width:340rpx;'></image>
+        <image  src='../../../img/p3.png'  class='phone-mode'  mode='widthFix' style='width:68rpx; height:106rpx;margin-left:17px;margin-top:47rpx;z-index:100;'></image>
+      </view>
+    
+
+</view>
+
+</scroll-view>
+
+
+<view class='nav-list'>
+        <!-- 规格 -->
+        <scroll-view scroll-y="true" class='select-item texture' wx:if="{{present=='0'}}">
+
+              <view class='select-list-box'>
+              
+              <view class='select-name'>
+                  材质
+                  </view>
+                  <view class='line'>|</view>
+                  <view class='items-view'>陶瓷</view> 
+                  <view class='items-view'>塑料</view> 
+                  <view class='items-view'>硅胶</view> 
+                  <view class='items-view'>硅胶</view>
+                  <view class='items-view'>塑料</view> 
+                
+              </view>
+
+              <view class='select-list-box'>
+                      <view class='select-name'>
+                      颜色
+                      </view>
+                      <view class='line'>|</view>
+                      <view class='items-view'>
+                      红色
+                      </view> 
+                      <view class='items-view'>
+                      蓝色
+                      </view> 
+                        <view class='items-view'>
+                      白色
+                      </view> 
+                        <view class='items-view'>
+                      黑色
+                      </view> 
+                        <view class='items-view'>
+                      灰色
+                      </view> 
+              </view>
+
+              <view class='select-list-box'>
+                      <view class='select-name'>
+                      规格
+                      </view>
+                      <view class='line'>|</view>
+                      <view class='items-view'>
+                      111111111111
+                      </view> 
+                      <view class='items-view'>
+                      111
+                      </view> 
+                        <view class='items-view'>
+                      111
+                      </view> 
+            
+              </view>
+        </scroll-view>
+
+        <!-- 添加图片 -->
+        <view class='select-item' wx:if="{{present=='1'}}">
+             <scroll-view  scroll-x="true" class='add-phone'>
+             <view class='add-box' style='width:{{400+129*phonelist.length}}rpx'>
+                  <view class='item-phone'>
+                      <image src='../../../img/jia1.png'></image>
+                  </view>
+                  <block wx:for="{{itemList}}">
+                  
+                    <view class='select-add-phone'>
+
+                      <image wx:if="{{item.types =='img'}}" src='{{item.image}}' mode='widthFix' style='width:129rpx;'></image>
+
+                      <text class='font-size-show ' wx:if="{{item.types == 'text'}}">{{item.text}}</text>
+                    
+                    </view>
+                  </block>
+             
+             </view>
+        
+              </scroll-view>
+        </view>
+   
+        <!-- 文字 -->
+        <view class='select-item' wx:if="{{present=='2'}}">
+
+            <view class='fonst-input' wx:if="{{!istext}}">
+                   <input bindinput='bindinput'></input>
+                    <view catchtap='addtext'>添加文字</view>
+            </view>
+
+
+            <view  wx:if="{{istext}}" class='select-color'>
+                <view class='color-list'>
+
+                    <view  style="background-color:#f70000" data-ys="#f70000" bindtap='changecolor'></view>
+                    <view  style="background-color:#e91e63" data-ys="#e91e63" bindtap='changecolor'></view>
+                    <view  style="background-color:#000000" data-ys="#000000" bindtap='changecolor'></view>
+                    <view  style="background-color:#ffeb3b" data-ys="#ffeb3b" bindtap='changecolor'></view>
+                    <view  style="background-color:#cddc39" data-ys="#cddc39" bindtap='changecolor'></view>
+                    <view  style="background-color:#00bcd4" data-ys="#00bcd4" bindtap='changecolor'></view>
+                    <view  style="background-color:#795548" data-ys="#795548" bindtap='changecolor'></view>
+                    <view  style="background-color:#009688" data-ys="#009688" bindtap='changecolor'></view>
+                    <view  style="background-color:#9e9e9e" data-ys="#9e9e9e" bindtap='changecolor'></view>
+                    <view  style="background-color:#696969" data-ys="#696969" bindtap='changecolor'></view>
+
+                </view>
+
+                <view class='fonst-type'>
+                 
+                      <scroll-view class="scroll-view_H" scroll-x style="width: 100%" style='width:630rpx;' >
+                        <text class='Fonttype0'>字体</text>
+                        <text class='Fonttype1'>字体</text>
+                        <text class='Fonttype2'>字体</text>
+                        <text class='Fonttype3'>字体</text>
+                        <text class='Fonttype4'>字体</text>
+                        <text class='Fonttype5'>字体</text>
+                        <text class='Fonttype6'>字体</text>
+                        <text class='Fonttype7'>字体</text>
+                        <text class='Fonttype8'>字体</text>
+
+                      </scroll-view> 
+           
+                  
+                  <view class=" {{isdirection == true ?'':'text-styles'}} box-mes" catchtap='selectbtns'>竖排</view>
+                </view>
+            </view>
+
+
+        </view>
+
+
+
+        <!-- 切换按钮 -->
+        <view class='nav-lists'>
+
+          <view class='nav-list-item' catchtap='selectbtn' data-selectitem='0'>
+            <image wx:if="{{present=='0'}}" src='../../../img/gg1.png'></image>
+            <image wx:else src='../../../img/gg.png'></image>
+            <text>规格</text>
+          </view>
+
+          <view class='nav-list-item' catchtap='selectbtn' data-selectitem='1'>
+            <image wx:if="{{present=='1'}}" src='../../../img/tup1.png'></image>
+            <image wx:else src='../../../img/tup.png'></image>
+            
+            <text>图案</text>
+          </view>
+
+
+          <view class='nav-list-item' catchtap='selectbtn' data-selectitem='2'>
+            <image wx:if="{{present=='2'}}" src='../../../img/wenzi2.png'></image>
+            <image wx:else src='../../../img/wenzi.png'></image>
+            <text>文字</text>
+          </view>
+
+        </view>
+</view>
+
+

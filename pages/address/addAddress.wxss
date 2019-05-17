@@ -1,0 +1,27 @@
+.page{
+  width:100%;
+  overflow: inherit;
+  height:100vh;
+  background-color:#f6f8fc;
+}
+.container{
+  padding: 30rpx;
+}
+.item{
+  display: flex;
+  line-height: 50rpx;
+  margin-bottom: 20rpx;
+}
+.item view{
+  flex: 0 0 150rpx;
+}
+input{
+  flex: 1;
+}
+
+.btn{
+  margin-top: 80rpx;
+}
+button{
+  font-size: 30rpx;
+}

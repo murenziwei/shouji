@@ -1,0 +1,138 @@
+.page {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+page {
+  width: 100%;
+  height: auto;
+  background-color: #f0eff5;
+}
+
+.zuiwa {
+  width: 95%;
+  height: auto;
+  display: flex;
+  padding: 30rpx 20rpx;
+}
+
+.dingdanhao {
+  font-size: 26rpx;
+  width: 88%;
+}
+
+.yifuk {
+  font-size: 26rpx;
+  color: red;
+}
+
+.zuiwaim {
+  width: 100%;
+  height: auto;
+  border-top: 1px solid #e2e2e2;
+  position: relative;
+  border-bottom: 20rpx solid #f0eff5;
+  background-color: #fff;
+}
+
+.linlin {
+  width: 95%;
+  height: auto;
+  display: flex;
+  padding: 9rpx 20rpx;
+}
+
+.diyi {
+  display: flex;
+  width: 23%;
+}
+
+.dier {
+  display: flex;
+  width: 45%;
+  height:50rpx;
+  font-size: 20rpx;
+  line-height: 70rpx;
+  color: #555;
+}
+
+.disan {
+  width: 32%;
+  font-size: 26rpx;
+  line-height: 70rpx;
+  height:50rpx;
+  display: flex;
+}
+
+.disi {
+  display: flex;
+  width: 5%;
+}
+
+.xian {
+  width: 94%;
+  height: 2rpx;
+  background-color: #e2e2e2;
+  position: absolute;
+  top: 90rpx;
+  left: 20rpx;
+}
+
+.xiana {
+  width: 94%;
+  height: 2rpx;
+  background-color: #e2e2e2;
+  position: absolute;
+  top: 185rpx;
+  left: 20rpx;
+}
+
+.yinc {
+  width: 95%;
+  height: 110rpx;
+  padding: 25rpx 20rpx;
+  display: flex;
+}
+
+.kuan {
+  height: 100%;
+  width: 70%;
+  margin-left: 60rpx;
+}
+
+.wenzi {
+  font-size: 26rpx;
+}
+
+.disp {
+  display: flex;
+  justify-content: space-between;
+}
+.daxiao{
+  font-size: 28rpx;
+  line-height: 52rpx;
+}
+.page1{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color:#f0eff5;
+  position: relative;
+}
+.waim{
+   width:140rpx;
+  height:170rpx;
+  position: fixed;
+  top:28%;
+  left:40%;
+}
+.zwsj{
+  width:138rpx;
+  height:115rpx;
+}
+.zwdd{
+  font-size: 30rpx;
+  text-align: center;
+  color:red;
+}

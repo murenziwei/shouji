@@ -1,0 +1,85 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/otherphone/otherphone",
+    "pages/customized/index",
+    "pages/mine/index",
+    "pages/myshop/index/index",
+    "pages/ruzhu/index",
+    "pages/order/order",
+    "pages/order/orderDetail",
+    "pages/address/addressManage",
+    "pages/address/addAddress",
+    "pages/dingzhi/dingzhi",
+    "pages/myshop/team/team",
+    "pages/canvas/index",
+    "pages/pRuZhu/index",
+    "pages/cooperation/index",
+    "pages/teamApply/index",
+    "pages/xianxia/index",
+    "pages/friend/friend",
+    "pages/login/login",
+    "pages/myshop/commission/commission",
+    "pages/myshop/Put_forward/Put_forward",
+    "pages/nopayteam/nopayteam",
+    "pages/my-order/my-order",
+    "pages/customization/customization",
+    "pages/components/choose/choose",
+    "pages/components/user/user",
+    "pages/components/xiangqing/xiangqing",
+    "pages/components/Shopkeeper/Shopkeeper",
+    "pages/components/cs/cs",
+    "pages/components/DIY/DIY",
+    "pages/components/h5/h5",
+    "pages/components/xiugai/xiugai",
+    "pages/components/Put_forward/Put_forward",
+    "pages/components/Commission/Commission",
+    "pages/components/Detailed/Detailed",
+    "pages/components/Distribution/Distribution",
+    "pages/components/My_team/My_team",
+    "pages/components/Distribution_order/Distribution_order",
+    "pages/components/dizhi/dizhi",
+    "pages/components/dingdan/dingdan",
+    "pages/components/evaluate/evaluate",
+    "pages/components/Order-details/Order-details",
+    "pages/components/my-order/my-order",
+    "pages/components/shouhuoxinxi/shouhuoxinxi",
+    "pages/components/shoukuan/shoukuan",
+    "pages/components/buy/buy",
+    "pages/components/diys/diys",
+    "pages/components/index/index",
+    "pages/audit/audit",
+    "pages/bmfteam/team",
+    "pages/components/historymoney/historymoney",
+    "pages/components/all_order/all_order"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#ff6122",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "img/index1.png",
+        "iconPath": "img/index.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/otherphone/otherphone",
+        "selectedIconPath": "images/icon/fanganzhiding.png",
+        "iconPath": "images/icon/fanganzhiding1.png",
+        "text": "素材库"
+      },
+      {
+        "pagePath": "pages/components/user/user",
+        "selectedIconPath": "img/user1.png",
+        "iconPath": "img/user.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

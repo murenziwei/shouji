@@ -1,0 +1,48 @@
+#getForm{
+  background-color:#fff;
+}
+page{
+  background-color:#f1f1f1;
+}
+.get-monry,.get-text{
+  color:#cfcfcf;
+  font-size:35rpx;
+}
+.border-color{
+  display:flex;
+  
+}
+.t-color,.get-input{
+  color:#000;
+  font-size:70rpx;
+  line-height:100rpx;
+  /* padding:30rpx 0; */
+  font-weight: 900;
+  height:100rpx;
+}
+
+.nav-history{
+  color:#6cb9f4;
+  font-size:35rpx;
+  text-decoration-line: underline;
+  text-decoration-color:#6cb9f4;
+  text-align:center;
+  padding:20rpx 0;
+}
+
+.s-b{
+  
+  background-color:#fd706d!important;
+
+  font-size:40rpx;
+  color:#fff;
+}
+
+.get-footer{
+  margin:30rpx 0;
+  
+}
+.g-header{
+  background-color:#fff;
+  padding:30rpx;
+}

@@ -1,0 +1,103 @@
+<!--pages/team/team.wxml-->
+ <view class='nav'>
+    <view class=" {{isstore == true?'select-color':''}}" catchtap='selectbtn' data-select='0'>
+      门店(5) 
+    </view>
+    <view catchtap='selectbtn' class=" {{isstore == false?'select-color':''}}" data-select='1'>
+      用户(4)
+    </view>
+ </view>
+<!-- 门店列表 -->
+<view hidden='{{!isstore}}'>
+  <view class='store'>
+    <view class='store-info'>
+      <image src='../../img/store.png'></image>
+      <view class='content'>
+        <view class='store-name'>
+          <text>门店名称</text>
+          <view>已推 <text class='count'>10000</text> 人</view>
+        </view>
+        <text>注册时间：2018-10-10</text>
+      </view>
+    </view>
+    <view class='other'>
+      <view>
+        总成交额：<text class='set-color'>￥1678</text>
+      </view>
+      <view>
+        <text class='set-color'>12321个</text>订单
+      </view>
+    </view>
+  </view>
+  <view class='store'>
+    <view class='store-info'>
+      <image src='../../img/store.png'></image>
+      <view class='content'>
+        <view class='store-name'>
+          <text>门店名称</text>
+          <view>已推 <text class='count'>10000</text> 人</view>
+        </view>
+        <text>注册时间：2018-10-10</text>
+      </view>
+    </view>
+    <view class='other'>
+      <view>
+        总成交额：<text class='set-color'>￥1678</text>
+      </view>
+      <view>
+        <text class='set-color'>12321个</text>订单
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 用户列表 -->
+<view hidden='{{isstore}}'>
+  
+  <view class='store'>
+    <view class='store-info'>
+      <image src='../../img/store.png'></image>
+      <view class='content'>
+        <view class='store-name'>
+          <text>门店名称</text>
+        
+        </view>
+        <text>注册时间：2018-10-10</text>
+      </view>
+    </view>
+    <view class='other'>
+      <view>
+        现金消费：<text class='set-color'>￥1678</text>
+      </view>
+      <view>
+      消费金额<text class='set-color'>12321币</text>
+      </view>
+      <view>
+        <text class='set-color'>12321个</text>订单
+      </view>
+    </view>
+  </view>
+  <view class='store'>
+    <view class='store-info'>
+      <image src='../../img/store.png'></image>
+      <view class='content'>
+        <view class='store-name'>
+          <text>门店名称</text>
+        
+        </view>
+        <text>注册时间：2018-10-10</text>
+      </view>
+    </view>
+    <view class='other'>
+      <view>
+        现金消费：<text class='set-color'>￥1678</text>
+      </view>
+      <view>
+      消费金额<text class='set-color'>12321币</text>
+      </view>
+      <view>
+        <text class='set-color'>12321个</text>订单
+      </view>
+    </view>
+  </view>
+
+</view>

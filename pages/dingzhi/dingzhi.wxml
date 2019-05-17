@@ -1,0 +1,409 @@
+<!--pages/index/index.wxml-->
+<view class='nav-phone'>
+
+  <view class='orlinfo'>
+    <image src='./images/shouji.png'></image>
+    <view class='type-info'>
+
+      <picker range="{{selectmodel}}" bindchange="bindchangebtn"  bindcolumnchange='rloadphonetype' mode="multiSelector">
+
+         <view class='list-types'>
+            <view class='type-select'>机型</view>
+              {{phonetype}}
+              <image src='./images/xi.png' class='images-xi'></image>
+          </view>
+      
+      </picker>
+    </view>
+  </view>
+
+
+  <view class='order-btn' catchtap='saveorderphone'>
+    选择规格： <image src='./images/xi.png' class='images-xis'></image>
+  </view>
+</view>
+<!-- 画布区 -->
+<view class='movablearea' bindtouchstart='touchstart' catchtouchmove="touchmove" catchtouchend='touchend'>
+
+
+  <view class='move-lists'  >
+
+    <block wx:for="{{list}}" wx:key="{{index}}">
+        <!-- 图片 -->
+        <block wx:if="{{item.types == 'img'}}">
+          <view class="margin-boxs"  style='left:{{item.left}}rpx; top: {{item.top}}rpx;'>
+
+            <!-- 图片内容 -->
+            <view class='move-images'>
+              <image src='{{item.image}}'  mode='widthFix' class='image-box set-images-fix'   style='transform: scale({{item.scale}})  rotate({{ item.rotate }}deg); '></image>
+            </view>
+
+            <!-- 点 -->
+            <view class=" border-content "  bindtouchstart='selectimages' data-select='{{index}}' data-types='img'  style="width:300rpx;height:{{item.imageheight}}rpx; transform: scale({{item.scale}})  rotate({{ item.rotate }}deg);  {{isMovePoint == true?'border: 2rpx dashed #999;':''}} ">
+              <!--  删除图片 -->
+              <image src='./images/delete.png' class='delete-icon' data-types='img'  data-select='{{index}}' catchtap='deletephonebtn' hidden='{{!isMovePoint}}'  ></image>
+
+            </view>
+
+    
+
+
+          </view>
+        </block>
+        <!-- 文字 -->
+        <block wx:if="{{item.types == 'text'}}">
+
+          <view  class="margin-boxs"  style='left:{{item.left}}rpx; top: {{item.top}}rpx;'>
+                      <!-- 文字内容 -->
+                      <view class='move-font-images' style=' transform: scale({{item.scale}})  rotate({{ item.rotate }}deg);'>
+                        <text class= "image-font-box set-images-fix"
+              style="color:{{item.color}}; font-family:{{item.fefontname}}; " >{{item.text}}</text>
+                      </view>
+
+                      <!--点 -->
+                      <view  class=" border-font-content "  bindtouchstart='selectimages' data-select='{{index}}' data-types='text'  style="width:{{item.width}}px; transform: scale({{item.scale}})  rotate({{ item.rotate }}deg);  {{isMovePoint == true?'border: 2rpx dashed #999;':''}}  height:{{item.height}}px; width:{{item.width}}px;" >       
+                        
+                        <image src='./images/delete.png' mode='widthFix' class='delete-icon' data-types='text'  data-select='{{index}}' catchtap='deletephonebtn' hidden='{{!isMovePoint}}'  ></image>
+
+                        <!-- <image data-types='text' mode='widthFix' data-select='{{index}}' src='./images/line.png' hidden='{{!isMovePoint}}'  catchtap='changetext' class='line-icon'></image> -->
+                      </view>
+          </view>
+
+   
+           
+       </block>
+
+
+
+
+        </block>
+
+
+            <!-- 背景图 -->
+            <view class='phone'>
+            <!-- ./images/phones.png -->
+              <image src='{{phonebasetype.model_border}}' mode='widthFix' style='width:340rpx;'></image>
+            </view>
+
+            <!-- 左右两侧遮挡 -->
+
+            <view class='phone-ment'  >
+              <!-- 左边 -->
+              <view class='ment'   catchtouchstart='catchtouchstart' catchtouchmove="catchtouchmove">
+              </view>
+              <!-- 背景遮罩图 -->
+              <view style='width:337rpx;'  class=" posad {{isMovePoint == true?'border-ment ':''}} ">
+                <!-- 背景 -->
+                <!-- model_border ./images/phone-met.png -->
+                <image src='{{phonebasetype.model_bottom}}'  mode='widthFix' style='width:340rpx;'></image>
+                <!-- 摄像头 -->
+                <!-- /images/xiangji.png -->
+                <image src='{{phonebasetype.model_top}}' class='header-images'mode='widthFix'  style='width:340rpx'></image>
+              </view>
+              <!-- 右边 -->
+              <view class='ment'   catchtouchstart='catchtouchstart' catchtouchmove="catchtouchmove">
+              </view>
+            </view>
+
+            <!-- 上下两侧遮挡 -->
+            <!-- <view class='top-cent'>
+
+                    </view> -->
+
+          </view>
+        </view>
+<!-- 价格 -->
+<view class='price' catchtouchmove='catchtouchmoveselect'>
+  
+  <text>RMB:  ￥{{price}}</text>
+  <view class='selct-box'>
+    打印清晰度 :
+    <view class='spring-time' >
+      
+      <view class='spring-time-type'>
+       
+        <image src='./images/xx1.png'></image>
+        <image src='./images/xx1.png'></image>
+        <image src='./images/xx1.png'></image>
+        <image src='./images/xx1.png'></image>
+        <image src='./images/xx1.png'></image>
+
+      </view>
+      <!-- 未 -->
+      <view class='spring-time-type'>
+       <block wx:for="{{star}}">
+        <image src='./images/xx0.png'></image>
+          </block>
+      </view>
+      
+    </view>
+  </view>
+</view>
+
+<!-- 规格 -->
+<view class='top-alert-window' catchtouchmove='catchtouchmoveselect' hidden="{{ishowstatus}}">
+
+
+</view>
+<view class='top-windows' hidden="{{ishowstatus}}">
+    <scroll-view scroll-y="true" class='select-item texture'>
+          <block wx:for="{{specifications}}">
+            <view class='select-list-box'>
+              <view class='select-name'>
+                  {{item.format_name}}
+                  </view>
+                  <view class='line'>|</view>
+                  <block wx:for="{{item.format_value}}" wx:for-item="subitem" wx:for-index="subindex">
+                  <view class="items-view {{selectstatus[index].values == subitem.value_name?'selct-colors':'' }} " data-format_value='{{item.format_name}}' data-value_name='{{subitem.value_name}}' catchtap='selctitenbtn' data-index='{{index}}' >{{subitem.value_name}}</view> 
+                 </block>
+            </view>
+          </block>
+         
+    </scroll-view>
+
+     <viev class="seletbtnsave" catchtap="selectsavebtn">
+        <view>已选择好</view>
+     </viev>
+     
+</view>
+
+
+
+<!-- 切换按钮 -->
+<view class='nav-list'>
+  
+  <view class='nav-lists'>
+
+    <view class='nav-list-item' catchtap='selectotherphone' >
+      <image wx:if="{{present=='0'}}" src='./images/upfile.png'></image>
+      <image wx:else src='./images/upfile.png'></image>
+      <text>选择素材</text>
+    </view>
+
+    <view class='nav-list-item' catchtap='btnsavbtn'  data-selecttype='1'>
+      <image wx:if="{{present=='1'}}" src='./images/phone.png'></image>
+      <image wx:else src='./images/phone.png'></image>
+
+      <text>上传图片</text>
+    </view>
+
+
+    <view class='nav-list-item' catchtap='addinputbox'>
+      <image wx:if="{{present=='2'}}" src='./images/font.png'></image>
+      <image wx:else src='./images/font.png'></image>
+      <text>添加文字</text>
+    </view>
+   <view class='nav-list-item user-auto' catchtap='savephonebtn' >
+      立即定制
+    </view>
+  </view>
+
+  
+  <!-- 图片弹出 -->
+  <view animation="{{animation}}" class='phone-boxs'>
+    <view class='phone-auto'>
+          <view class='reload-file' catchtap='btnsavbtn' data-selecttype='0'>
+            <image src='./images/reloadimg.png'></image>
+            重选图片
+          </view>
+
+          <view class='save-btn' catchtap='saveclickbtn'>确定</view>
+    </view>
+  </view>
+
+  <!-- 文字添加弹出 -->
+
+  <view class='phone-boxs phone-boxs-save' wx:if='{{!showfont}}'>
+    <view class='phone-auto'>
+          <view class='reload-file reload-file-save '>
+              <input value='{{textconter}}' focus="true" bindinput="bindinput" cursor-spacing="70" class='placeholder-class'></input>
+          </view>
+          <view class='save-btn reload-file-btn' catchtap='hiddenbtn'>
+            <image src='./images/gou.png'></image>
+          </view>
+    </view>
+  </view>
+
+  <!-- 文字修改 -->
+  <view class='phone-boxs phone-boxs-save' wx:if='{{!roadshowfont}}'>
+    <view class='phone-auto'>
+          <view class='reload-file reload-file-save '>
+              <input value='{{roadtextconter}}' focus="true" bindinput="roadbindinput" cursor-spacing="70" class='placeholder-class'></input>
+          </view>
+          <view class='save-btn reload-file-btn' catchtap='roadhiddenbtn'>
+            <image src='./images/gou.png'></image>
+          </view>
+    </view>
+  </view>
+
+
+  <!-- 文字编辑弹出 -->
+  <view hidden='{{iswindows}}' class='phone-select-color' catchtouchmove='catchtouchmoveselect'>
+
+    <scroll-view  class="scroll-view_H" scroll-x style="width: 100%">
+      <view class='icon-select-item' style="width: 180%">
+
+          <view class='item-selct-icon '>
+            <view class='item-color item-sect-color' >
+                <view class='item-selct' catchtap='setColorbtn' data-color='#FF34B3' style="background-color:#FF34B3">
+                </view>
+            </view>
+          </view>
+
+
+          <view class='item-selct-icon' >
+            <view class='item-color' >
+                <view class='item-selct' catchtap='setColorbtn' data-color='#f70000' style='background-color:#f70000'>
+                </view>
+            </view>
+          </view>
+
+          <view class='item-selct-icon'>
+            <view class='item-color'  >
+                <view class='item-selct' catchtap='setColorbtn' data-color='#00bcd4' style='background-color:#00bcd4'>
+                </view>
+            </view>
+          </view>
+
+          <view class='item-selct-icon'>
+            <view class='item-color' >
+                <view class='item-selct' catchtap='setColorbtn' data-color='#ffeb3b' style='background-color:#ffeb3b'>
+                </view>
+            </view>
+          </view>
+
+          <view class='item-selct-icon'>
+            <view class='item-color' >
+                <view class='item-selct' catchtap='setColorbtn' data-color='#cddc39'  style='background-color:#cddc39'>
+                </view>
+            </view>
+          </view>
+
+          <view class='item-selct-icon'>
+            <view class='item-color' >
+                <view class='item-selct' catchtap='setColorbtn'  data-color='#795548'  style='background-color:#795548'>
+                </view>
+            </view>
+          </view>
+
+          <view class='item-selct-icon'>
+            <view class='item-color' >
+                <view class='item-selct' catchtap='setColorbtn' data-color='#009688'  style='background-color:#009688'>
+                </view>
+            </view>
+          </view>
+
+         <view class='item-selct-icon'>
+            <view class='item-color' >
+                <view class='item-selct' catchtap='setColorbtn' data-color='#9e9e9e'  style='background-color:#9e9e9e'>
+                </view>
+            </view>
+          </view>
+
+          <view class='item-selct-icon'>
+            <view class='item-color'>
+                <view class='item-selct' catchtap='setColorbtn' data-color='#696969'  style='background-color:#696969'>
+                </view>
+            </view>
+          </view>
+
+           <view class='item-selct-icon'>
+            <view class='item-color'>
+                <view class='item-selct' catchtap='setColorbtn'  data-color='#8B2252' style='background-color:#8B2252'>
+                </view>
+            </view>
+          </view>
+
+           <view class='item-selct-icon'>
+            <view class='item-color'>
+                <view class='item-selct' catchtap='setColorbtn' data-color='#00CED1' style='background-color:#00CED1'>
+                </view>
+            </view>
+          </view>
+
+          <view class='item-selct-icon'>
+            <view class='item-color'>
+                <view class='item-selct' catchtap='setColorbtn' data-color='#000080'  style='background-color:#000080'>
+                </view>
+            </view>
+          </view>
+
+          <view class='item-selct-icon'>
+            <view class='item-color'>
+                <view class='item-selct' catchtap='setColorbtn' data-color='#B8860B' style='background-color:#B8860B'>
+                </view>
+            </view>
+          </view>
+
+          <view class='item-selct-icon'>
+            <view class='item-color'>
+                <view class='item-selct' catchtap='setColorbtn' data-color='#EEEE00' style='background-color:#EEEE00'>
+                </view>
+            </view>
+          </view>
+        
+         
+      
+      
+      </view>
+   
+    
+    </scroll-view>
+
+    <view class='default-font'>
+  <scroll-view  class="scroll-view_H" scroll-x style="width: 100%">
+      <view class='icon-select-items' style="width: 182%">
+
+ <view class="phone-select-box">
+         <image src=" {{fontstatus == 0?'./images/m01.png':'./images/m00.png'}} " mode='widthFix' style='width:225rpx' data-select='0' catchtap='selectbtn'></image>
+      </view>
+
+      <view class="phone-select-box ">
+         <image src="  {{fontstatus == 1?'./images/m11.png':'./images/m10.png'}}" mode='widthFix' style='width:225rpx' data-select='1' catchtap='selectbtn'></image>
+      </view>
+
+      <view class="phone-select-box "> 
+           <image src="  {{fontstatus == 2?'./images/m21.png':'./images/m20.png'}}" mode='widthFix' style='width:225rpx' data-select='2' catchtap='selectbtn'></image>
+      </view>
+
+      <view class="phone-select-box ">
+       <image src=" {{fontstatus == 3?'./images/m31.png':'./images/m30.png'}}   " mode='widthFix' style='width:225rpx' data-select='3' catchtap='selectbtn'></image>
+      </view>
+
+      <view class="phone-select-box ">
+        <image src="{{fontstatus == 4?'./images/m41.png':'./images/m40.png'}} " mode='widthFix' style='width:225rpx' data-select='4' catchtap='selectbtn'></image>
+      </view>
+
+      <view class="phone-select-box ">
+           <image src=" {{fontstatus == 5?'./images/m51.png':'./images/m50.png'}} " mode='widthFix' style='width:225rpx' data-select='5' catchtap='selectbtn'></image>
+      </view>
+ 
+
+      
+     </view>
+   
+    
+    </scroll-view>
+
+    </view>
+
+
+    <view class='selct-btn'>
+      <view class='selct-item' catchtap='reloadfont'>
+          <image src='./images/back.png'></image>
+          <text>修改文本</text>
+      </view>
+      
+      <view class='selct-item' catchtap='rloadingtext'>
+        <image src='./images/good.png'></image>
+         <text>确认添加</text>
+      </view>
+    </view>
+
+  </view>
+
+
+
+
+</view>
+

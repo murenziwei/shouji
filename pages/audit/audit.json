@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "shareAndKefu": "/components/shareAndKefu/index"
+  },
+  "navigationBarTitleText": "审核",
+  "disableScroll": true
+}

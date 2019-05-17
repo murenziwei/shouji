@@ -1,0 +1,44 @@
+<block wx:if="{{shuliang.length == 0}}">
+   <view class="page1 imgload1" wx:if="{{loadshow}}"></view>
+   <view class='none-data' wx:else>没有更多数据了···</view>
+</block>
+
+<block wx:else>
+  <view class="page">
+    
+      <view class="zzwaim" wx:for="{{shuliang}}" wx:for-item="item">
+        <view class="bianhao">
+          <view>订单编号：\t{{item.order_code}}</view>
+        </view>
+        <view class="xian">
+          <view class="zuiwam">
+            <view class="yige">
+              <view class="tupian">
+                <view class="guohou">
+                  <image src="{{item.user_avatar}}" class="daxiao"></image>
+                </view>
+              </view>
+              <view class="huali">
+                <view class="mingc">店长名：{{item.user_nick}}</view>
+                <view class="mingc">价格：￥{{item.cash_pay}}</view>
+              </view>
+            </view>
+          </view>
+          
+          <view class="zongji">
+            <text>　{{item.add_time}}</text>
+            
+          </view>
+        </view>
+        <view class="daifuk">
+          <view style="width:60%;height:100%">
+            <text class="fuk">订单状态：{{item.status_name}}</text>
+          </view>
+          <!-- <view style="width:50%;height:100%;display:flex;margin-top:2%;justify-content:flex-end;">
+            <view class="ckxq" data-id="{{item.order_code}}" data-gold_pay="{{item.gold_pay}}"  data-express_total= "{{item.express_total}}" data-type="1" bindtap='xiangq'>查看详情</view>
+          </view> -->
+        </view>
+      </view>
+  </view>
+</block>
+<shareAndKefu></shareAndKefu>

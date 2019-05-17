@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "shareAndKefu": "/components/shareAndKefu/index"
+  },
+  "navigationBarTitleText": "我的店铺",
+  "disableScroll":true
+}

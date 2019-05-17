@@ -1,0 +1,40 @@
+<block wx:if="{{shuliang.length == 0}}">
+   <view class="page1 imgload1" wx:if="{{loadshow}}"></view>
+   <view class='none-data' wx:else>没有更多数据了···</view>
+</block>
+
+<block wx:else>
+  <view class="page">
+    
+    <view class="weui-cells weui-cells_after-title biank" wx:for="{{shuliang}}" wx:for-item="item">
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{item.user_avatar}}" style="width: 50px; height: 50px; display: block;border-radius:10px;" />
+        </view>
+        <view class="weui-cell__bd">
+          <view style="line-height:30px;font-size: 12px;">{{item.user_nick}}</view>
+          <view style="line-height:30px;font-size: 12px;color: #888888;">已为你赚取佣金：<text class='money-active'>+{{item.money}}元</text></view>
+          
+        </view>
+        <view bindtap='controlfn' data-index='{{index}}'>
+          <view style="line-height:30px;font-size:15px;">团队{{item.num_team}}人  <text class='iconfont {{item.show?"icon-bottom":"icon-jiantou"}}'></text></view>
+        </view>
+      </view>
+      <view class='child-frame' wx:if="{{item.show}}">
+         <block wx:for="{{item.team}}" wx:for-item='child'>
+             <view class="weui-cell child-item">
+              <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                <image src="{{child.user_avatar}}" style="width: 40px; height: 40px; display: block;border-radius:10px;" />
+              </view>
+              <view class="weui-cell__bd">
+                <view style="line-height:25px;font-size:10px;">{{child.user_nick}}</view>
+                <view style="line-height:25px;font-size: 10px;color: #888888;">已为你赚取佣金：<text class='money-active'>{{child.money}}</text></view>
+                
+              </view>
+            </view>
+         </block>
+      </view>
+    </view>
+  </view>
+</block>
+<shareAndKefu></shareAndKefu>

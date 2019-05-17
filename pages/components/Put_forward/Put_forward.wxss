@@ -1,0 +1,93 @@
+@import "/utils/weui.wxss";
+.page{
+  width:100%;
+  height:100vh;
+  background-color:#f0eff5;
+}
+.pdd{
+  padding-top:30rpx;
+  padding-bottom:30rpx;
+}
+.pdd1{
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+}
+.nih{
+  position: relative;
+}
+.ziti{
+  font-size:36rpx;
+  color:#555555;
+} 
+.lable{
+  width:80rpx;
+  color:#555555;
+}
+.lable1{
+  width:150rpx;
+}
+.fangshi{
+  width:100%;
+  height:250rpx;
+  background-color:#fff;
+}
+.weui-cells__title {
+  margin-bottom: 1em;
+}
+.tixianfs{
+  font-size:35rpx;
+  color:#555555;
+  line-height: 100rpx;
+  margin-left:20rpx; 
+}
+.weixin{
+  width:200rpx;
+  height:90rpx;
+  border:1px solid #fd706d!important;
+  margin-left:50rpx;
+  display: flex;
+  color:#fd706d;
+}
+.yhk{
+  width:200rpx;
+  height:9  0rpx;
+  border:1px solid #e2e2e2;
+  margin-left:50rpx;
+  display: flex;
+}
+.yinhangka{
+  width:43rpx;
+  height:36rpx;
+  margin-left:15rpx;
+  margin-top:25rpx;
+  margin-right:20rpx;
+}
+.shangm{
+  margin-top:20rpx;
+}
+.page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.abg{
+  margin-top:100rpx;
+  background-color:#f0eff5;
+}
+
+
+.nav-history{
+  color:#6cb9f4;
+  font-size:35rpx;
+  text-decoration-line: underline;
+  text-decoration-color:#6cb9f4;
+  text-align:center;
+  padding:20rpx 0;
+}
+
+.s-b{
+  
+  background-color:#fd706d!important;
+
+  font-size:40rpx;
+  color:#fff;
+}

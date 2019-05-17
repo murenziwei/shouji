@@ -1,0 +1,12 @@
+/* pages/audit/audit.wxss */
+.fail_img{
+  width:200rpx!important;
+}
+.fail_text{
+  font-size:300rpx;
+  color:#d4237a;
+}
+
+.nav_active:active{
+  opacity: 0.5;
+}

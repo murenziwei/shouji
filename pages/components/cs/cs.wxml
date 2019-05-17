@@ -1,0 +1,11 @@
+<picker-view class="pickerView" indicator-style="height: 50px;" style="width: 100%;height:200rpx;" value="{{value}}" bindchange="bindChange">
+  <picker-view-column>
+    <view wx:for="{{choice}}" wx:for-item="item" data-index="{{index}}" style="line-height: 50px;text-align:center;background-color:#fff">{{item.chinese_name}}</view>
+  </picker-view-column>
+  <picker-view-column>
+    <view wx:for="{{eciohc}}" wx:for-item="res" style="line-height: 50px;text-align:center;background-color:#fff">{{res.chinese_name}}</view>
+  </picker-view-column>
+  <picker-view-column>
+    <view wx:for="{{iceohc}}" wx:for-item="res" style="line-height: 50px;text-align:center;background-color:#fff">{{res.chinese_name}}</view>
+  </picker-view-column>
+</picker-view>

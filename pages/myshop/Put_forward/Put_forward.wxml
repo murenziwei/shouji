@@ -1,0 +1,20 @@
+<view class='get'>
+  <form bindsubmit='formSubmit' id="getForm">
+     
+   <view class='g-header'>
+      <view class='get-text'>
+         提现金额
+      </view>
+      <view class='border-color'>
+         <text class='t-color'>￥</text><input class='input' class='get-input' type='number' name='money'></input>
+      </view>
+      <view class='get-monry'>
+         余额 <text class='gm-text'>{{total_numble}}</text>
+      </view>
+   </view>
+   <view class='get-footer'>
+      <button open-type="submit" class='s-b' hover-class='none'>提现到余额</button>
+      <navigator class='nav-history' hover-class='none'>查看提现记录</navigator>
+   </view>
+  </form>
+</view>

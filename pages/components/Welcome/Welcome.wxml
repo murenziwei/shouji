@@ -1,0 +1,3 @@
+<button class="anniu" open-type="getUserInfo" bindtap='jinru'></button>
+<image src="../../../img/hello.jpg" class="tupian"></image>
+<view>{{opid}}</view>

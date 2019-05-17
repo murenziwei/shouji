@@ -1,0 +1,5 @@
+<!--pages/canvas/index.wxml-->
+<view class='container'>
+<!-- <button bindtap='saveImage'>保存图片</button> -->
+  <mycanvas canvasdata="{{dataList}}"></mycanvas>
+</view>

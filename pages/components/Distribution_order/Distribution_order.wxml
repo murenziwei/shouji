@@ -1,0 +1,59 @@
+<block wx:if="{{shuliang == ''}}">
+  <view class="page1">
+    <view class="waim">
+      <image src="../../../img/zwsj.png" class="zwsj"></image>
+      <view class="zwdd">暂无订单</view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="page">
+    <block wx:for="{{shuliang}}" wx:for-item="item">
+      <view class="zuiwaim" data-id="{{item.id}}">
+        <view class="xian"></view>
+        <view class="zuiwa">
+          <view class="dingdanhao">
+            <view>订单：{{item.order_code}}</view>
+          </view>
+          <view class="yifuk" wx:if="{{item.order_status == 0}}">已取消</view>
+          <view class="yifuk" wx:if="{{item.order_status == 1}}">未支付</view>
+          <view class="yifuk" wx:if="{{item.order_status == 2}}">已付款</view>
+          <view class="yifuk" wx:if="{{item.order_status == 3}}">已发货</view>
+          <view class="yifuk" wx:if="{{item.order_status == 4}}">已签收</view>
+          <view class="yifuk" wx:if="{{item.order_status == 5}}">退款中</view>
+          <view class="yifuk" wx:if="{{item.order_status == 6}}">已完成</view>
+        </view>
+        <view class="linlin" bindtap='kaiguan' data-index="{{index}}">
+          <view class="diyi">
+            <image src="{{item.user_avatar}}" style="width:70rpx;height:70rpx;"></image>
+            <view style="font-size:20rpx;line-height:72rpx;margin-left:15rpx;">{{item.user_nick}}</view>
+          </view>
+          <view class="dier">
+            <view style="height:50rpx;">现金{{item.cash_pay}}元</view>
+            <view style="height:50rpx;margin-left:15rpx;">金币{{item.gold_pay}}币</view>
+          </view>
+          <view class="disan">
+            佣金：
+            <text style="color:red;font-size:20rpx">{{item.share_money}}</text>元
+          </view>
+          <view class="disi">
+            <image src="{{key == index?'../../../img/xia.png':'../../../img/you.png'}}" style='width:30rpx;height:30rpx;margin-top:20rpx;'></image>
+          </view>
+        </view>
+        <block wx:if="{{key == index}}">
+          <view class="xiana"></view>
+          <view class="yinc" wx:for="{{item.goods_info}}" wx:for-item="xx">
+            <image src="{{xx.goods_thumb}}" style="width:120rpx;height:100%;"></image>
+            <view class="kuan">
+              <view class="wenzi">{{xx.goods_name}}</view>
+              <view class="disp">
+                <view class="daxiao">x{{xx.buy_numble}}</view>
+                <view class="daxiao">￥{{xx.goods_price}}元</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</block>

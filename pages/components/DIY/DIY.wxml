@@ -1,0 +1,118 @@
+
+ <view class="shangceng">
+  <view class="jixing" bindtap='ontap'>
+    <image src="../../../img/shouji.png" style="width:50rpx;height:50rpx;margin-top:16rpx"></image>
+    <view>机型</view>
+    <view style="margin-left:5rpx;">{{shebei}}</view>
+    <view style="margin-left:10rpx;">修改</view>
+  </view>
+  <button class="xiayibu" style="border-radius:0px" open-type="{{p_userInfo==null?'getUserInfo':''}}" bindtap="{{p_userInfo == null?'onlogin':'onCanvas'}}">下一步\n提交订单</button>
+</view>
+<view bindload="bindload" class="diercheng" catchtouchstart="touchstart" catchtouchmove="touchmove" catchtouchend="touchend">
+  <image src="{{p_over.url}}" data-id="1" style="width:{{p_over.width}}rpx;height:{{p_over.height}}rpx;z-index:0;left:{{p_over.left}}rpx;top:{{p_over.top}}rpx;" class="back"></image>
+
+  <view class="caijian" style="width:{{p_back.width}}rpx;left:{{p_back.left}}rpx;top:{{p_back.top}}rpx;height:{{p_back.height- 10}}rpx;z-index:1">
+
+    <image bindload="onBackLoad" src="{{p_back.url}}" style="width:{{p_back.width}}rpx;height:{{p_back.height}}rpx;z-index:1" bindtap='back' class="back"></image>
+
+    <image class="imag" mode="widthFix" bindload="onImageLoad" wx:for="{{p_medias}}" data-index="{{index}}" wx:for-item="item" wx:if="{{item.type == 2}}" src="{{item.url}}" style="{{index == p_curIndex?'border:1px dashed #b5b5b5':''}}; top:{{item.position.y}}rpx;left:{{item.position.x}}rpx;width:{{item.width}}rpx;height:{{item.height}}rpx;transform: rotate({{item.rotate}}deg) scale({{item.scale}});z-index:{{index+ 2}}"></image>
+
+    <view class="imag {{item.size}}" id='id{{index}}' style="{{index == p_curIndex?'border:2px dashed #b5b5b5':''}};color:#{{item.color}};transform: rotate({{item.rotate}}deg) scale({{item.scale}});left:{{item.position.x}}rpx;top:{{item.position.y}}rpx;width:auto;height:auto;z-index:{{index + 100}};font-family:{{item.font}};font-size:{{item.size}}px;writing-mode:{{item.writing}};white-space:nowrap;"
+
+      wx:for="{{p_medias}}" wx:for-item="item" wx:if="{{item.type == 1}}">{{item.input}}</view>
+    <image src="{{p_camera.url}}" style="width:{{p_camera.width}}rpx;height:{{p_camera.height}}rpx;z-index:995" class="back"></image>
+  </view>
+</view>
+<view class="jiage">
+  价格:
+  <text style="color:red">￥{{jiage}}元</text>
+</view>
+<view class="qingxi">
+  <image src="../../../img/wenhao.png" style="width:50rpx;height:50rpx;margin-top:0rpx;"></image>
+  <view style="font-size:28rpx;line-height:50rpx;margin-left:10rpx;margin-right:10rpx;font-family:Trebuchet MS', Arial, sans-serif;">打印清晰度:</view>
+  <image wx:for="{{xingxing}}" src="../../../img/hxx.png" style="width:50rpx;height:50rpx;"></image>
+  <image wx:for="{{mxingxing}}" src="../../../img/wujiaoxing.png" style="width:50rpx;height:50rpx;"></image>
+</view>
+<block wx:if="{{is_format == 1}}">
+  <view class="guigg" wx:if="{{wenzhi == 0}}">
+    <view class="gongyi" wx:for="{{guige}}" wx:for-item="item">
+      <view style="height:40rpx;line-height:80rpx">{{item.format_name}}</view>
+      <view class="erzhongj">|</view>
+      <view class="da">
+        <view bindtap='onCode' wx:for="{{item.format_value}}" wx:for-item="res" data-code="{{res.format_code}}" data-show="{{res.value_show}}" data-price="{{res.format_price}}" data-index="{{index}}" data-id="{{res.id}}" class="{{key==index?'xuanzong':'yanqe'}}">{{res.value_name}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{wenzhi == 1}}">
+  <scroll-view style="width:100%;height:160rpx;margin-bottom:16rpx;margin-top:10rpx;" scroll-x="true">
+    <view class="uploadWrap" scroll-x="true">
+      <view class="ewai" bindtap='onImg'>
+        <image style="width:35rpx;height:35rpx;margin-left:50rpx;margin-top:42rpx;margin-right:66rpx;" src="../../../img/jia1.png"></image>
+        <view style="font-size:20rpx;text-align:center;line-height:16rpx;">添加图片</view>
+      </view>
+      <view class="upload_Item {{p_curIndex == index?'xuxian':''}}" wx:for="{{p_medias}}" wx:for-item="item">
+        <image data-index="{{index}}" class="upload_Item_img" mode="widthFix" bindtap='onTabClick' src="{{item.url}}" wx:if="{{item.type == 2}}"></image>
+        <view data-index="{{index}}" wx:if="{{item.type==1}}" bindtap='onTabClick' class="beij">{{item.input}}</view>
+        <view class="shanchu" data-index="{{index}}" bindtap='shanchu'>x</view>
+      </view>
+    </view>
+  </scroll-view>
+</block>
+<view wx:if="{{wenzhi == 2}}">
+  <view class="shuru" wx:if="{{wz == 0}}">
+    <input class="neirou" bindinput='tianjia' placeholder='请输入内容' value=""></input>
+    <button bindtap='onText' class="background-color" style="color:#fff;width:120rpx;height:74rpx;margin-top:8rpx;font-size:28rpx;">保存</button>
+  </view>
+  <view wx:if="{{wz == 1}}" style="width:100%;height:auto;">
+    <view class="zhi">
+      <view class="kuan" style="background-color:#f70000" data-ys="f70000" bindtap='yanse'></view>
+      <view class="kuan" style="background-color:#e91e63" data-ys="e91e63" bindtap='yanse'></view>
+      <view class="kuan" style="background-color:#000000" data-ys="000000" bindtap='yanse'></view>
+      <view class="kuan" style="background-color:#ffeb3b" data-ys="ffeb3b" bindtap='yanse'></view>
+      <view class="kuan" style="background-color:#cddc39" data-ys="cddc39" bindtap='yanse'></view>
+      <view class="kuan" style="background-color:#00bcd4" data-ys="00bcd4" bindtap='yanse'></view>
+      <view class="kuan" style="background-color:#795548" data-ys="795548" bindtap='yanse'></view>
+      <view class="kuan" style="background-color:#009688" data-ys="009688" bindtap='yanse'></view>
+      <view class="kuan" style="background-color:#9e9e9e" data-ys="9e9e9e" bindtap='yanse'></view>
+      <view class="kuan" style="background-color:#696969" data-ys="696969" bindtap='yanse'></view>
+    </view>
+    <view bindtap="onFont" data-id="web-font" data-index="{{index}}" style="font-family:{{fontFamily}};float:left" class="YRDZST">ABC你好</view>
+    <view bindtap="onFont" data-id="web-font" data-index="{{index}}" style="font-family:{{fontFamily}};float:left" class="YRDZST">ABC你好</view>
+    <view style="{{shupai == 1?'writing-mode:lr-tb':'writing-mode:tb-rl'}}" bindtap='shupai' class="shupai">竖排</view>
+  </view>
+</view>
+<view class="dibu"> 
+  <!--底部-->
+ <view class="sanfen" bindtap='guige'>
+    <image src="{{wenzhi==0?'../../../img/gg1.png':'../../../img/gg.png'}}" class="daxiaoyy"></image>
+    <view class="wenzhi {{wenzhi ==0?'color':''}}">规格</view>
+  </view>
+  <view class="sanfen" bindtap='tuan'>
+    <image src="{{wenzhi==1?'../../../img/tup1.png':'../../../img/tup.png'}}" class="daxiaoyy"></image>
+    <view class="wenzhi {{wenzhi ==1?'color':''}}">图案</view>
+  </view>
+  <view class="sanfen" bindtap='wen'>
+    <image src="{{wenzhi==2?'../../../img/wenzi2.png':'../../../img/wenzi.png'}}" class="daxiaoyy"></image>
+    <view class="wenzhi {{wenzhi ==2?'color':''}}">文字</view>
+  </view>
+</view> -->
+<view class="canvas">
+  <canvas canvas-id='canvas' class="canvas1"></canvas>
+</view> -->
+<view style="width:100%;height:auto;{{yeas == 0?'display:none':'display:block'}}">
+  <view class="zhedang" bindtap='zhedan'></view>
+  <view class="zidingyi">
+    <view style="font-size:30rpx;color:#e2e2e2;margin-left:15rpx;margin-top:15rpx;" bindtap='zhedan'>取消</view>
+    <view style="font-size:32rpx;color:#000;margin-top:15rpx;">选择手机型号</view>
+    <view style="font-size:30rpx;color:#d563a0;margin-right:15rpx;margin-top:15rpx;" bindtap='zhedan'>确定</view>
+  </view>
+  <picker-view class="pickerView" indicator-style="height: 50px;" style="width: 100%;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{choice}}" wx:for-item="item" data-index="{{index}}" style="line-height: 50px;text-align:center;background-color:#fff">{{item.brand_name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{choice[index].brand_model}}" wx:for-item="res" style="line-height: 50px;text-align:center;background-color:#fff">{{res.model_name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view> 

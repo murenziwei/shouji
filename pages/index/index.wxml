@@ -1,0 +1,81 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='banner'>
+    <swiper circular="true" indicator-dots="{{false}}" autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}" indicator-active-color="#ff3e21" class="swiper yuanjiao" bindchange="swiperChange">
+      <block wx:for="{{img}}" wx:for-index="index">
+        <swiper-item >
+          <navigator url="{{item.banner_url}}" class="slide-url" hover-class='none'>
+          
+            <image  src="{{item.banner_image}}" bindtap="lianj" data-idx="{{index}}" class="slide-image" mode="scaleToFill" binderror="errimg" />
+          </navigator>
+        </swiper-item>
+        
+      </block>
+    </swiper>
+    
+    <view class="dots"> 
+      <block wx:for="{{img}}" wx:key="unique"> 
+        <view class="dot {{index == swiperCurrent ? ' active' : ''}}"></view> 
+      </block> 
+    </view>
+  </view>
+  <view class='nav'>
+    <view class='arrowLeft {{cCur===0?"oPa":""}}' bindtap="prevFn"></view>
+    <swiper circular="true"  class="s-swiper" interval="{{5000}}" duration="{{100}}" indicator-active-color="#ff3e21" style='height:210rpx;' autoplay='{{false}}' easing-function="linear" bindchange="cCurfn" current="{{cCur}}"  >
+        <swiper-item wx:for="{{shul}}" wx:for-item="citem" wx:key="cindex" class="si-class">
+          <view class='class-flex'>
+           <block wx:for="{{citem}}" >
+            <view class="branch" >
+              <view class="sj" data-id="{{item.id}}">
+                <image src="{{item.category_image}}" style="width:100rpx;height:100rpx;border-radius:50rpx;margin-top:20rpx;"></image>
+                <view class="wensj">{{item.category_name}}</view>
+              </view>
+            </view>
+           </block>
+          </view>
+        </swiper-item>
+        
+    </swiper>
+    <view class='arrowRight {{cCur==(shul.length-1)&&cCur>0?"oPa":""}}' bindtap="nextFn" data-cur='{{cCur}}'></view>
+  </view>
+  
+  <!-- 商品 -->
+  <view class="shangping" id="nihao">
+    <view wx:for="{{shangp}}" wx:for-item="sp" data-id="{{sp.id}}" class="shoujike" data-img="{{sp.goods_thumb}}" bindtap='xiangq'>
+      <view class="spt">
+        <image lazy-load="true" src='{{sp.goods_thumb}}' style="width:100%;height:100%;"></image>
+      </view>
+      <view class="mingc">
+        <view class="damc">{{sp.goods_name}}</view>
+        <view class="jiage">
+          <view style="color:red;">￥{{sp.price_sale}}</view>
+          <view>购买:{{sp.sale_virtual+sp.sale_numble}}人</view>
+        </view>
+        <view class="lingqu border color">立即领取</view>
+      </view>
+    </view>
+  </view>
+  <!-- 视频介绍s -->
+  <view class='shipin'>
+    <view class='title'>
+      <image src='/images/icon/shipin.png'></image>
+      视频介绍
+    </view>
+    
+    <view class='video'>
+      <!-- poster="https://murenziwei.github.io/video/loadbg.gif" -->
+      <video  bindtap="controlvideo" show-center-play-btn="{{fal}}" id="myVideo" controls="{{fal}}" show-progress="{{false}}" enable-play-gesture="{{true}}" src="{{v_src}}"  binderror="videoErrorCallback"  bindplay="videoPlay" bindended='vodeoEnd' bindwaiting='videoWait' bindpause="videopause" class='load2'>
+      <!-- <cover-view style="display:{{vsta?'':'none'}}"  class='btt' bindtap='dingzhi'>立即定制</cover-view> -->
+      <cover-image class='play' src='/images/icon/play.png' style="display:{{vsta?'':'none'}}"  catchtap="controlvideo" ></cover-image>
+      </video>
+      
+      <!-- <button class='btt'>立即定制</button> -->
+      
+    </view>
+    <button class='btt' bindtap='dingzhi'>立即定制</button>
+    
+  </view>
+  <!-- 视频介绍e -->
+</view>
+
+  <!-- <shareAndKefu bind:myevent="myevent"></shareAndKefu> -->

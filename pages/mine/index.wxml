@@ -1,0 +1,129 @@
+<!--pages/mine/index.wxml-->
+<view class='container'>
+  <view class='topBg'></view>
+  <view class='content'>
+      <view class='con'>
+        <view class='item1'>
+          <view class='tx-left'>
+            <image src='{{p_userInfo.avatar}}'></image>
+            <view>
+              <view style='font-size:30rpx;margin-bottom:10rpx;'>
+                {{p_userInfo.nick}} <text class='grade' wx:if="{{grade}}">{{grade}}</text>
+              </view>
+              <view style='font-size:24rpx;'>金币余额: <text>{{p_userCoin}}</text></view>
+            </view>
+          </view>
+          <view bindtap='toAddress' class='shoucang'>收货地址</view>
+        </view>
+        <!-- 合作s -->
+        <view class='item2'>
+          <view bindtap='toFriend'>
+            <image src='/images/icon/hezuo.png'></image>
+            <text>商务合作</text>
+          </view>
+          <view bindtap='toShop' style='text-align:right'>
+            <image src='/images/icon/dianzhang.png'></image>
+            <text>店长入口</text>
+          </view>
+        </view>
+        <!-- 合作e -->
+        <!-- 订单s -->
+        <view>
+          <view class='title'>
+            全部订单
+          </view>
+          
+          <view class='all'>
+            <view wx:for="{{orderNavs}}" bindtap='toOrder' data-type="" wx:key="index" class='a' data-ind='{{index}}'>
+              <image src='{{item.icon}}'></image>
+              <view>{{item.label}}</view>
+            </view>
+          </view>
+        </view>
+        <!-- 订单e -->
+        
+        
+        <view class="page">
+          <view class="page__bd">
+            <view class="weui-tab">
+              <view>
+                <view class='ff'>
+                  <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="fenx {{activeIndex == index ? 'cur' : ''}}" bindtap="tabClick">
+                      {{item}}
+                    </view>
+                  </block>
+                </view>
+              </view>
+              <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <view class="shangping">
+                    <!-- 商品 -->
+                    <block wx:if="{{my_shouc.length == 0}}">
+                    <view style="width:100%;height:400rpx;text-align:center;">
+                      <image src="/images/icon/meiyou.png" class="zanwu" mode="aspectFit"></image>
+                    </view>
+                    </block>
+                    <block wx:else>
+                      <view class="shoujike" wx:for="{{my_shouc}}"  wx:for-item="item" wx:for-index='idx' >
+                        <view class="spt">
+                          <image src='{{item.goods_thumb}}' style="width:100%;height:100%;"></image>
+                          <view class="shouchang" data-id="{{item.id}}" data-idx="{{idx}}" bindtap="quxiao">
+                            <icon class="iconfont icon-xingzhuang60kaobei2" style="font-size:38rpx;color:#e49d04;text-align:center;margin-left:3.3rpx;"></icon>
+                            <view style="font-size:12px;color:#696969">收藏</view>
+                          </view>
+                        </view>
+                        <view class="mingc">
+                          <view class="damc">{{item.goods_name}}</view>
+                          <view class="jiage">￥{{item.goods_price}}</view>
+                          <view class="lingqu border color" data-id="{{item.goods_id}}" data-img="{{item.goods_thumb}}" bindtap='xq' >立即领取</view>
+                        </view>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                  <!--我的分享-->
+                  <view class="juli"></view>
+                  <block wx:if="{{shuliang.length == 0}}">
+                    <view style="width:100%;height:400rpx;text-align:center;">
+                      <image src="/images/icon/meiyou.png" class="zanwu" mode="aspectFit"></image>
+                    </view>
+                  </block>
+                  <block wx:else>
+                    <view class="weui-cells weui-cells_after-title biank" wx:for="{{shuliang}}" wx:for-item="item">
+                      <view class="weui-cell">
+                        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                          <image src="{{item.user_avatar}}" style="width: 50px; height: 50px; display: block" />
+                        </view>
+                        <view class="weui-cell__bd">
+                          <view style="line-height:30px;">{{item.user_nick}}</view>
+                          <view style="line-height:30px;font-size: 13px;color: #888888;">注册时间：{{item.registe_time}}</view>
+                        </view>
+                      </view>
+                      <view class="weui-cell weui-cell_access baide">
+                        <view class="weui-cell__bd">
+                          <view style="display: inline-block; vertical-align: middle;font-size:14px;">消费{{item.user_past}}元</view>
+                        </view>
+                        <view class="weui-cell__ft" style="font-size:14px;">{{item.user_orders}}个订单</view>
+                      </view>
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+  <shareAndKefu></shareAndKefu>
+</view>
+<!-- 登录 -->
+<view class='loginbox' hidden="{{islogin}}">
+  <view class='loginsbox'>
+    <view class='login-title'>微信授权</view>
+    <view class='login-tip'>为了更好的体验，请先授权</view>
+    <view class='login-content'>· 获取你的公开信息（头像，昵称等。）</view>
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfo'>去授权</button>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<!--pages/team/team.wxml-->
+ 
+<!-- 门店列表 -->
+<view wx:for="{{oneAgent}}">
+  <view class='store'>
+    <view class='store-info'>
+      <image src='{{item.shop_avatar}}'></image>
+      <view class='content'>
+        <view class='store-name'>
+          <text>{{item.shop_name}}</text>
+          
+        </view>
+        <text>注册时间：{{item.add_time}}</text>
+      </view>
+    </view>
+    
+  </view>
+</view>
+<block wx:if="{{oneAgent.length == 0}}">
+<view style="width:100%;height:400rpx;text-align:center;">
+  <image src="/images/icon/meiyou.png" class="zanwu" mode="aspectFit" ></image>
+</view>
+</block>

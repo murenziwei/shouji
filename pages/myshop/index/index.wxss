@@ -1,0 +1,90 @@
+/* pages/myshop/index.wxss */
+.container{
+  background: #eeeeee;
+  height: 100vh;
+}
+.top{
+  height: 200rpx;
+  background: #fd746e;
+  padding-top: 80rpx;
+  text-align: center;
+  color: #fff;
+}
+.bt{
+  border: 1rpx solid #fff;
+  width: 220rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 30rpx;
+  margin: 0 auto;
+}
+.asd{
+  background: #fff;
+  margin-bottom: 14rpx;
+}
+.asd >view{
+  flex: 1;
+  text-align: center;
+  line-height: 50rpx;
+}
+.six{
+  display: flex;
+  background: #fff;
+  flex-flow: wrap;
+  /* justify-content: space-around; */
+  padding: 30rpx;
+}
+.six-item{
+  /* flex: 0 0 200rpx; */
+  text-align: center;
+  font-size: 24rpx;
+  margin-bottom: 40rpx;
+  line-height: 38rpx;
+  width:33%;
+}
+.six image{
+  width: 120rpx;
+  height: 120rpx;
+  /* background: #eee; */
+  margin-bottom: 10rpx;
+}
+
+
+/* 推广二维码 */
+
+.zhedang{
+  width:100vw;
+  height:100vh;
+  background-color:rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top:0rpx;
+  left:0rpx;
+  z-index:98;
+}
+.zhongjian{
+  width:80%;
+  height:80%;
+  position: absolute;
+  /* background-color:#fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:-600rpx;
+  margin:auto;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:99;
+}
+.zhongj{
+  width:350rpx;
+  height:350rpx;
+}
+.cancel-f{
+  position:absolute;
+  bottom:0;
+  right:0;
+  left:0;
+  width:100%;
+  text-align: center;
+}

@@ -1,0 +1,57 @@
+<view bindtap='urlTobase64' style="width:50px;height:20px;"></view>
+<view class="page1">
+  <view class="haoping">
+    <view class="tup">
+      <image src="../../../img/shouji.jpg" style="width:30px;height:30px;"></image>
+    </view>
+    <view class="hao" bindtap='haoping' data-id="1">
+      <image src="{{pandun==1?'../../../img/hao1.png':'../../../img/hao.png'}}" style="width:35px;height:25px;margin-right:5%;"></image>
+      <view class="ping {{pandun == 1?'hons':''}}">好评</view>
+    </view>
+    <view class="hao" bindtap='haoping' data-id="2">
+      <image src="{{pandun==2?'../../../img/zhong1.png':'../../../img/zhong.png'}}" style="width:35px;height:25px;margin-right:5%;"></image>
+      <view class="ping {{pandun == 2?'hons':''}}">中评</view>
+    </view>
+    <view class="hao" bindtap='haoping' data-id="3">
+      <image src="{{pandun==3?'../../../img/cha1.png':'../../../img/cha.png'}}" style="width:35px;height:25px;margin-right:5%;"></image>
+      <view class="ping {{pandun == 3?'hons':''}}">差评</view>
+    </view>
+  </view>
+  <textarea placeholder="请输入评价内容" class="ziti" bindinput='neir'></textarea>
+  <!-- <view class="page">
+    <view bindtap="paiz" class="paizhao">
+      <image src="../../../img/shangchuan.png" style="width:40px;height:40px;margin-left:25%;margin-top:5%;"></image>
+      <view class="scpz">上传凭证</view>
+    </view>
+    <block >
+      <image src="{{page}}" style="width:82px;height:82px;"wx:for="{{page}}"></image>
+    </block>
+  </view> -->
+  <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">图片上传</view>
+                            <view class="weui-uploader__info">{{files.length}}/1</view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+  <button class="tijiao" bindtap='tijiao'>提交</button>
+</view>

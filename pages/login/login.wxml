@@ -1,0 +1,9 @@
+<!-- 登录 -->
+<view class='loginbox' hidden="{{islogin}}">
+  <view class='loginsbox'>
+    <view class='login-title'>微信授权</view>
+    <view class='login-tip'>为了更好的体验，请先授权</view>
+    <view class='login-content'>· 获取你的公开信息（头像，昵称等。）</view>
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfo'>去授权</button>
+  </view>
+</view>
