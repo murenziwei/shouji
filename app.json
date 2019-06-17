@@ -51,7 +51,8 @@
     "pages/audit/audit",
     "pages/bmfteam/team",
     "pages/components/historymoney/historymoney",
-    "pages/components/all_order/all_order"
+    "pages/components/all_order/all_order",
+    "pages/dzlist/dzlist"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -226,6 +226,7 @@ page{
 	box-shadow: 0rpx -2rpx 2rpx 0rpx 
 		rgba(229, 229, 229, 0.52);
   padding-top: 5rpx;
+  z-index:2000;
 }
 
 .move-lists{
@@ -490,16 +491,19 @@ page{
 .phone-boxs{
   background-color: #fff;
   position: fixed;
-  bottom: -204rpx;
   left: 0;
   right: 0;
-  height:200rpx;
+  bottom:0;
+  /* height:200rpx; */
   z-index: 99;
   /* padding-bottom: 5rpx; */
 }
 .font-styles{
  
  
+}
+.b40{
+  bottom:34pt!important;
 }
 
 .fonst-boxs{

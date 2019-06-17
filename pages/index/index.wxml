@@ -21,7 +21,7 @@
   </view>
   <view class='nav'>
     <view class='arrowLeft {{cCur===0?"oPa":""}}' bindtap="prevFn"></view>
-    <swiper circular="true"  class="s-swiper" interval="{{5000}}" duration="{{100}}" indicator-active-color="#ff3e21" style='height:210rpx;' autoplay='{{false}}' easing-function="linear" bindchange="cCurfn" current="{{cCur}}"  >
+    <swiper circular="true"  class="s-swiper" interval="{{5000}}" duration="{{100}}" indicator-active-color="#ff3e21" style='height:210rpx;' autoplay='{{true}}' easing-function="linear" bindchange="cCurfn" current="{{cCur}}"  >
         <swiper-item wx:for="{{shul}}" wx:for-item="citem" wx:key="cindex" class="si-class">
           <view class='class-flex'>
            <block wx:for="{{citem}}" >

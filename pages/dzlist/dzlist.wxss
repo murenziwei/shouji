@@ -1,0 +1,67 @@
+/* pages/dzlist/dzlist.wxss */
+page{
+ background-color:#f1f1f1;
+}
+.dz-item{
+  background-color:#fff;
+  width:90%;
+  margin:30rpx auto;
+  box-shadow:0 0 10px rgba(0,0,0,.1);
+  border-radius:10px;
+}
+.di-top{
+  position:relative;
+  width:100%;
+  padding-bottom:42%;
+}
+.dt-img{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+}
+.di-bottom{
+  
+  width:100%;
+  box-sizing:border-box;
+  padding:20rpx;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+.d-l-price{
+  display:flex;
+  align-items:center;
+}
+.d-l-name{
+  color:#000;
+  font-size:28rpx;
+}
+.dlp-new{
+  color:#eb4a3d;
+  font-size:28rpx;
+  font-weight: bold;
+}
+.dlp-old{
+  color:#999;
+  text-decoration:line-through;
+  margin-left:10rpx;
+  font-size:23rpx;
+}
+.db-right{
+  display:flex;
+  align-items:center;
+  justify-content: flex-end;
+}
+.dr-btns{
+  line-height:2;
+  text-align:center;
+  padding:0 30rpx;
+  font-size:22rpx;
+  border:1px solid #f19e38;
+  color:#f19e38;
+  border-radius:52rpx;
+}

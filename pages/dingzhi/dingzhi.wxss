@@ -216,6 +216,9 @@ page{
 	box-shadow: 0rpx -2rpx 2rpx 0rpx 
 		rgba(229, 229, 229, 0.52);
   padding-top: 5rpx;
+  
+  z-index:2000;
+
 }
 
 .move-lists{
@@ -247,6 +250,7 @@ page{
   left: 0rpx;
   right: 0rpx;
   z-index: 1001;
+  bottom:0;
 }
 .top-alert-window{
   position: fixed;

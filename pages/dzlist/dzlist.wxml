@@ -1,0 +1,27 @@
+<view>
+    <view>
+      <view class='dz-frame'>
+       <view class="dz-item" wx:for="{{4}}">
+          <view class='di-top'>
+            <image class='dt-img' lazy-load='{{true}}'></image>
+          </view>
+          <view class='di-bottom'>
+            <view class='db-left'>
+              <view class='d-l-name'>
+                 爆款T福
+              </view>
+              <view class='d-l-price'>
+                 <text class='dlp-new'>￥58起</text>
+                 <text class='dlp-old'>￥23</text>
+              </view>
+            </view>
+            <view class='db-right'>
+               <view class='dr-btns'>
+                  立即传图定制
+               </view>
+            </view>
+          </view>
+       </view>
+      </view>
+    </view>  
+</view>

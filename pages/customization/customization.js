@@ -53,7 +53,7 @@ Page({
       //   height: 33
       // }  
     ],
-
+    isiphone:false,
     // 选择图片
     imglist: [], //图像
     index: 0,//当前默认选择图片下标
@@ -97,6 +97,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var getmd = wx.getSystemInfoSync().model;
+    if (getmd.search(/iphone/i)>-1){
+      this.setData({isiphone:true});
+    }
 
     if (options.share) {
       wx.setStorageSync('share', options.share);
@@ -1081,9 +1085,9 @@ Page({
 
     // this.animation = animation;
     if (status == 1) {
-      animation.translateY(-80).step()
+      animation.translateY(0).step()
     } else {
-      animation.translateY(80).step()
+      animation.translateY(180).step()
     }
 
 

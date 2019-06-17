@@ -174,7 +174,7 @@
 
 
 <!-- 切换按钮 -->
-<view class='nav-list'>
+<view class="nav-list {{isiphone?'b40':0}}">
   
   <view class='nav-lists'>
 
@@ -204,7 +204,7 @@
 
   
   <!-- 图片弹出 -->
-  <view animation="{{animation}}" class='phone-boxs'>
+  <view animation="{{animation}}" class="phone-boxs {{isiphone?'b40':''}}">
     <view class='phone-auto'>
           <view class='reload-file' catchtap='btnsavbtn' data-selecttype='0'>
             <image src='./images/reloadimg.png'></image>
@@ -217,7 +217,7 @@
 
   <!-- 文字添加弹出 -->
 
-  <view class='phone-boxs phone-boxs-save' wx:if='{{!showfont}}'>
+  <view class="phone-boxs phone-boxs-save {{isiphone?'b40':''}}" wx:if='{{!showfont}}'>
     <view class='phone-auto'>
           <view class='reload-file reload-file-save '>
               <input value='{{textconter}}' focus="true" bindinput="bindinput" cursor-spacing="70" class='placeholder-class'></input>
@@ -229,7 +229,7 @@
   </view>
 
   <!-- 文字修改 -->
-  <view class='phone-boxs phone-boxs-save' wx:if='{{!roadshowfont}}'>
+  <view class="phone-boxs phone-boxs-save {{isiphone?'b40':''}}" wx:if='{{!roadshowfont}}'>
     <view class='phone-auto'>
           <view class='reload-file reload-file-save '>
               <input value='{{roadtextconter}}' focus="true" bindinput="roadbindinput" cursor-spacing="70" class='placeholder-class'></input>
@@ -242,7 +242,7 @@
 
 
   <!-- 文字编辑弹出 -->
-  <view hidden='{{iswindows}}' class='phone-select-color' catchtouchmove='catchtouchmoveselect'>
+  <view hidden='{{iswindows}}' class="phone-select-color {{isiphone?'b40':''}}" catchtouchmove='catchtouchmoveselect'>
 
     <scroll-view  class="scroll-view_H" scroll-x style="width: 100%">
       <view class='icon-select-item' style="width: 180%">

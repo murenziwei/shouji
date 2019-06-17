@@ -47,7 +47,7 @@ Page({
   },
   dingzhi(){
     wx.navigateTo({
-      url: '/pages/customization/customization'
+      url: '/pages/dzlist/dzlist'
     });
   },
   xiangq: function (res) {
@@ -57,7 +57,6 @@ Page({
     })
   },
   cCurfn: function ($e) {
-    console.log($e, "e");
     this.setData({
       cCur: $e.detail.current
     });
